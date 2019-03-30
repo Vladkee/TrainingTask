@@ -17,9 +17,17 @@ namespace TrainingTask
             int.TryParse(radiusString, out int radius);
         
             Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
-            */
+            
+            //task1 activation
             int final = 0;
             Console.WriteLine($"Sum is {Program.TestInitialization(final)}");
+            */
+
+            //task2 activation
+            Task2PiAndEyler();
+            
+            
+
         }
 
         public static decimal PerformCalculation(int r)
@@ -28,6 +36,7 @@ namespace TrainingTask
             decimal square = Pi * r * r;
             return square;
         }
+        //task1
         public static int TestInitialization(int final)
         {
             int uberflu = 1;
@@ -39,6 +48,15 @@ namespace TrainingTask
             final = uberflu +_Identifier + \u006fldentifier + myVar + myVariab1le;
             return final;
         }
+        //task2
+        public static void Task2PiAndEyler()
+        {
+            const double Pi = 3.141592653;
+            const double E = 2.7182818284590452;
+            Console.WriteLine($"Number Pi is {Pi}. Number E is {E}");
+        }
         
+
+
     }
 }
