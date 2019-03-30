@@ -63,6 +63,9 @@ namespace TrainingTask
             string first = "\nмоя строка 1";
             string second = "\tмоя строка 2";
             string third = "\aмоя строка 3";
+            Console.WriteLine(first);
+            Console.WriteLine(second);
+            Console.WriteLine(third);
         }
 
 
