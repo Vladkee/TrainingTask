@@ -49,7 +49,7 @@ namespace TrainingTask
             Task6();
         }
         //
-        //Square calculation
+        //Square calculation (Task 7)
         //
         public static decimal PerformCalculation(int r)
         {
@@ -80,7 +80,7 @@ namespace TrainingTask
             //Основной проблемой является "обрезание" числа. Ср. ариф. должно выйти около 12.666. Тип int обрезает и округляет число до целых без округления в большую сторону.
             //
         }
-        
+       
 
     }
 }
