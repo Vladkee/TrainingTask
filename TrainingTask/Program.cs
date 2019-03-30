@@ -10,7 +10,7 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Hello World!");
             Console.Write("Add radius ");
             string radiusString = Console.ReadLine();
 
