@@ -21,12 +21,14 @@ namespace TrainingTask
             //task1 activation
             int final = 0;
             Console.WriteLine($"Sum is {Program.TestInitialization(final)}");
-            */
-
+            
             //task2 activation
             Task2PiAndEyler();
-            
-            
+            */
+            //task3 activation
+            Task3();
+
+
 
         }
 
@@ -55,7 +57,13 @@ namespace TrainingTask
             const double E = 2.7182818284590452;
             Console.WriteLine($"Number Pi is {Pi}. Number E is {E}");
         }
-        
+        //task3
+        public static void Task3()
+        {
+            string first = "\nмоя строка 1";
+            string second = "\tмоя строка 2";
+            string third = "\aмоя строка 3";
+        }
 
 
     }
