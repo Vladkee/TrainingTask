@@ -21,7 +21,8 @@ namespace TrainingTask
             */
             //HomeTask1();
             //HomeTask2();
-            HomeTask3();
+            //HomeTask3();
+            HomeTask4();
 
         }
         public static decimal PerformCalculation(int r)
@@ -51,6 +52,15 @@ namespace TrainingTask
             //Инициализируя переменную v1, используя неявную типизацию, при этом применяя значение типа char, мы исключаем возможность изменить значение переменной на другое (не char).
             //Такое же правило действует и для явной типизации.
             //
+        }
+        public static void HomeTask4()
+        {
+            Console.WriteLine("Введите длину стороны квадрата:");
+            string side = Console.ReadLine();
+            int intSide1 = Convert.ToInt32(side);
+            int intSide2 = Int32.Parse(side);
+            int perimetr = 4 * intSide1;
+            Console.WriteLine("Периметр квадрата равен:" + perimetr);
         }
     }
 }
