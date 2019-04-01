@@ -24,7 +24,8 @@ namespace TrainingTask
             //HomeTask3();
             //HomeTask4();
             //HomeTask5();
-            HomeTask6();
+            //HomeTask6();
+            HomeTask7();
 
         }
         public static decimal PerformCalculation(int r)
@@ -82,6 +83,13 @@ namespace TrainingTask
             int right = number / 10;
             int left = number % 10;
             Console.WriteLine($"Правое число: {right}. Левое число: {left}.");
+        }
+        public static void HomeTask7()
+        {
+            int n1 = 20000;
+            int n2 = 6000;
+            long sum = n1 + n2;
+            Console.WriteLine(sum);
         }
     }
 }
