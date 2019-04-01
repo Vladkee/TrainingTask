@@ -23,7 +23,8 @@ namespace TrainingTask
             //HomeTask2();
             //HomeTask3();
             //HomeTask4();
-            HomeTask5();
+            //HomeTask5();
+            HomeTask6();
 
         }
         public static decimal PerformCalculation(int r)
@@ -74,6 +75,13 @@ namespace TrainingTask
             Console.WriteLine("Площадь круга S1 равна " + square1);
             Console.WriteLine("Площадь круга S2 равна " + square2);
             Console.WriteLine("Площадь круга S3 равна " + square3);
+        }
+        public static void HomeTask6()
+        {
+            int number = 23;
+            int right = number / 10;
+            int left = number % 10;
+            Console.WriteLine($"Правое число: {right}. Левое число: {left}.");
         }
     }
 }
