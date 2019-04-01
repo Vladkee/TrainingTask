@@ -26,7 +26,8 @@ namespace TrainingTask
             //HomeTask5();
             //HomeTask6();
             //HomeTask7();
-            HomeTask8();
+            //HomeTask8();
+            HomeTask9();
 
         }
         public static decimal PerformCalculation(int r)
@@ -102,6 +103,26 @@ namespace TrainingTask
             //
             byte inByte = (byte)sum;
             Console.WriteLine(inByte);
+        }
+        public static void HomeTask9()
+        {
+            // 1-й способ, использование третей переменной.
+            int a = 1;
+            int b = 2;
+            Console.WriteLine($"BERFORE: Number a is {a}, number b is {b}.");
+            int c = a;
+            a = b;
+            b = c;
+            Console.WriteLine($"AFTER: Number a is {a}, number b is {b}.\n");
+            // 2-й способ, использование суммы и разницы чисел.
+            int first = 5;
+            int second = 7;
+            Console.WriteLine($"BERFORE: The first number is {first}, the second number is {second}.");
+            first = first + second; //5+7=12
+            second = first - second; //12-7=5
+            first = first - second; //12-5=7
+            Console.WriteLine($"AFTER: The firt number is {first}, the second number is {second}.");
+
         }
     }
 }
