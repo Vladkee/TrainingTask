@@ -22,7 +22,8 @@ namespace TrainingTask
             //HomeTask1();
             //HomeTask2();
             //HomeTask3();
-            HomeTask4();
+            //HomeTask4();
+            HomeTask5();
 
         }
         public static decimal PerformCalculation(int r)
@@ -61,6 +62,18 @@ namespace TrainingTask
             int intSide2 = Int32.Parse(side);
             int perimetr = 4 * intSide1;
             Console.WriteLine("Периметр квадрата равен:" + perimetr);
+        }
+        public static void HomeTask5()
+        {
+            const double Pi = 3.14;
+            double r1 = 5.3;
+            double r2 = 3.2;
+            var square1 = Pi * r1 * r1;
+            var square2 = Pi * r2 * r2;
+            var square3 = square1 - square2;
+            Console.WriteLine("Площадь круга S1 равна " + square1);
+            Console.WriteLine("Площадь круга S2 равна " + square2);
+            Console.WriteLine("Площадь круга S3 равна " + square3);
         }
     }
 }
