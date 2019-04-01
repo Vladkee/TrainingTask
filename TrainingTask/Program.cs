@@ -25,7 +25,8 @@ namespace TrainingTask
             //HomeTask4();
             //HomeTask5();
             //HomeTask6();
-            HomeTask7();
+            //HomeTask7();
+            HomeTask8();
 
         }
         public static decimal PerformCalculation(int r)
@@ -90,6 +91,17 @@ namespace TrainingTask
             int n2 = 6000;
             long sum = n1 + n2;
             Console.WriteLine(sum);
+        }
+        public static void HomeTask8()
+        {
+            long n1 = 200;
+            long n2 = 300;
+            long sum = n1 * n2;
+            //
+            //Невозможно получить произведение чисел при преобразовании переменной в byte. Лиш при переведении уже самого произведения в тип byte удалось получить результат, но с большой потерей, так как byte вмещает всего 256 чисел.
+            //
+            byte inByte = (byte)sum;
+            Console.WriteLine(inByte);
         }
     }
 }
