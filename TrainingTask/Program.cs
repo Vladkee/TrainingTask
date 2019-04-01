@@ -19,7 +19,9 @@ namespace TrainingTask
         
             Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
             */
-            HomeTask1();
+            //HomeTask1();
+            HomeTask2();
+
         }
         public static decimal PerformCalculation(int r)
         {
@@ -31,6 +33,13 @@ namespace TrainingTask
         {
             int x1 = 5;
             Console.WriteLine(x1);
+        }
+        public static void HomeTask2()
+        {
+            Console.WriteLine("Введите ваше имя");
+            string name = Console.ReadLine();
+            string hello = "Привет, " + name;
+            Console.WriteLine(hello);
         }
     }
 }
