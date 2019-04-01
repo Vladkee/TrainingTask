@@ -20,7 +20,8 @@ namespace TrainingTask
             Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
             */
             //HomeTask1();
-            HomeTask2();
+            //HomeTask2();
+            HomeTask3();
 
         }
         public static decimal PerformCalculation(int r)
@@ -40,6 +41,16 @@ namespace TrainingTask
             string name = Console.ReadLine();
             string hello = "Привет, " + name;
             Console.WriteLine(hello);
+        }
+        public static void HomeTask3()
+        {
+            var v1 = 'v';
+            v1 = 'V';
+            Console.WriteLine($"{v1} means Vendetta");
+            //
+            //Инициализируя переменную v1, используя неявную типизацию, при этом применяя значение типа char, мы исключаем возможность изменить значение переменной на другое (не char).
+            //Такое же правило действует и для явной типизации.
+            //
         }
     }
 }
