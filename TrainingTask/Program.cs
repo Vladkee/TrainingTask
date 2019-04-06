@@ -14,7 +14,9 @@ namespace TrainingTask
 
             //Numbers();
 
-            IsNumberOdd();
+            //IsNumberOdd();
+
+            OperationsWithNumbers();
         }
 
         public static void AddSecondsToHours()
@@ -60,6 +62,19 @@ namespace TrainingTask
                 Console.WriteLine($"Your number is odd!");
             }
             else Console.WriteLine($"Your number is even!");
+        }
+
+        public static void OperationsWithNumbers()
+        {
+            int x = 10;
+            int y = 12;
+            int z = 3;
+
+            x += y - x++ * z; Console.WriteLine($"Operation with x =: {x}");
+            z = --x - y * 5; Console.WriteLine($"Operation with z =: {z}");
+            y /= x + 5 % z; Console.WriteLine($"Operation with y =: {y}");
+            z = x++ + y * 5; Console.WriteLine($"Operation with z =: {z}");
+            x = y - x++ * z; Console.WriteLine($"Operation with x =: {x}");
         }
     }
 }
