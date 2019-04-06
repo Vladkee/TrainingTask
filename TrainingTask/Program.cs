@@ -12,7 +12,9 @@ namespace TrainingTask
         {
             //AddSecondsToHours();
 
-            Numbers();
+            //Numbers();
+
+            IsNumberOdd();
         }
 
         public static void AddSecondsToHours()
@@ -43,5 +45,21 @@ namespace TrainingTask
             else Console.WriteLine("Number B is not located between A and C");
         }
 
+        public static void IsNumberOdd()
+        {
+            Console.WriteLine("Enter a 3-digit number");
+            var strNumber = Console.ReadLine();
+            int digit = strNumber.Length;
+            if (digit != 3)
+            {
+                Console.WriteLine("You have entered not a 3-digit number. Please try again!");
+            }
+            int number = Int32.Parse(strNumber);
+            if (number % 2 != 0)
+            {
+                Console.WriteLine($"Your number is odd!");
+            }
+            else Console.WriteLine($"Your number is even!");
+        }
     }
 }
