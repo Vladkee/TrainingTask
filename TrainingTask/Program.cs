@@ -10,20 +10,15 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            Console.Write("Add radius ");
-            string radiusString = Console.ReadLine();
-
-            int.TryParse(radiusString, out int radius);
-        
-            Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
+            AddSecondsToHours();
         }
 
-        public static decimal PerformCalculation(int r)
+        public static void AddSecondsToHours()
         {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
+            Console.WriteLine("Enter seconds");
+            int seconds = Int32.Parse(Console.ReadLine());
+            int hours = seconds / 3600;
+            Console.WriteLine($"{hours} hour(s) have passed from the start of the day");
         }
     }
 }
