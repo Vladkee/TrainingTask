@@ -16,7 +16,9 @@ namespace TrainingTask
 
             //IsNumberOdd();
 
-            OperationsWithNumbers();
+            //OperationsWithNumbers();
+
+            ConsoleCalculator();
         }
 
         public static void AddSecondsToHours()
@@ -75,6 +77,51 @@ namespace TrainingTask
             y /= x + 5 % z; Console.WriteLine($"Operation with y =: {y}");
             z = x++ + y * 5; Console.WriteLine($"Operation with z =: {z}");
             x = y - x++ * z; Console.WriteLine($"Operation with x =: {x}");
+        }
+
+        public static void ConsoleCalculator()
+        {
+            int operand1 = 100;
+            int operand2 = 10;
+            //
+            // To divide by 0 change operand2 to 0. 
+            //
+            Console.WriteLine("Please enter an arithmetic sign (+,-,*,/,%)");
+            string sign = Console.ReadLine();
+            switch (sign)
+            {
+                case "+":
+                    int sum = operand1 + operand2;
+                    Console.WriteLine($"Sum of numbers is {sum}");
+                    break;
+                case "-":
+                    int difference = operand1 - operand2;
+                    Console.WriteLine($"Difference of numbers is {difference}");
+                    break;
+                case "*":
+                    int multiplication = operand1 * operand2;
+                    Console.WriteLine($"Multiplication of numbers is {multiplication}");
+                    break;
+                case "/":
+                    if (operand2 == 0)
+                    {
+                        Console.WriteLine("Cannot be divided by null");
+                    }
+                    else
+                    {
+                        int division = operand1 / operand2;
+                        Console.WriteLine($"Division of numbers is {division}");
+                    }
+                    break;
+                case "%":
+                    int remainderOfDivision = operand1 % operand2;
+                    Console.WriteLine($"Sum of numbers is {remainderOfDivision}");
+                    break;
+                default:
+                    Console.WriteLine("You have entered a wrong symbol");
+                    break;
+            }
+
         }
     }
 }
