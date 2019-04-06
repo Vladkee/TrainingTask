@@ -22,7 +22,9 @@ namespace TrainingTask
 
             //Range0to100();
 
-            WeatherTranslate();
+            //WeatherTranslate();
+
+            BonusCalculation();
         }
 
         public static void AddSecondsToHours()
@@ -193,6 +195,45 @@ namespace TrainingTask
                 default:
                     Console.WriteLine("The is no translation for this word.");
                     break;
+            }
+        }
+
+        public static void BonusCalculation()
+        {
+            Console.WriteLine("Enter a long service of a person:");
+            var age = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a salary of a person:");
+            var salary = Int32.Parse(Console.ReadLine());
+            double bonus;
+            if (age < 5)
+            {
+                bonus = salary * 0.1 + salary;
+                Console.WriteLine($"Your bonus is 10%. Your salary will be {bonus}.");
+            }
+            else if (age >=5 && age <10)
+            {
+                bonus = salary * 0.15 + salary;
+                Console.WriteLine($"Your bonus is 15%. Your salary will be {bonus}.");
+            }
+            else if (age >= 10 && age < 15)
+            {
+                bonus = salary * 0.25 + salary;
+                Console.WriteLine($"Your bonus is 25%. Your salary will be {bonus}.");
+            }
+            else if (age >= 15 && age < 20)
+            {
+                bonus = salary * 0.35 + salary;
+                Console.WriteLine($"Your bonus is 35%. Your salary will be {bonus}.");
+            }
+            else if (age >= 20 && age < 25)
+            {
+                bonus = salary * 0.45 + salary;
+                Console.WriteLine($"Your bonus is 45%. Your salary will be {bonus}.");
+            }
+            else if (age >= 25)
+            {
+                bonus = salary * 0.5 + salary;
+                Console.WriteLine($"Your bonus is 50%. Your salary will be {bonus}.");
             }
         }
     }
