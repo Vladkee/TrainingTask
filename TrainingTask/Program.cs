@@ -18,7 +18,9 @@ namespace TrainingTask
 
             //OperationsWithNumbers();
 
-            ConsoleCalculator();
+            //ConsoleCalculator();
+
+            Range0to100();
         }
 
         public static void AddSecondsToHours()
@@ -44,9 +46,9 @@ namespace TrainingTask
             }
             else if ((numberA < numberB) && (numberC > numberB))
             {
-                Console.WriteLine("Number B is located between A and C");
+                Console.WriteLine("Number B between A and C");
             }
-            else Console.WriteLine("Number B is not located between A and C");
+            else Console.WriteLine("Number B located between A and C");
         }
 
         public static void IsNumberOdd()
@@ -121,7 +123,33 @@ namespace TrainingTask
                     Console.WriteLine("You have entered a wrong symbol");
                     break;
             }
+        }
 
+        public static void Range0to100()
+        {
+            Console.WriteLine("Enter a number between 0 and 100.");
+            int number = Int32.Parse(Console.ReadLine());
+            if (number < 0 && number > 100)
+            {
+                Console.WriteLine("ERROR: You have entered a wrong number.");
+            }
+            if (number >= 0 && number <= 14)
+            {
+                Console.WriteLine("Your number located between 0 and 14.");
+            }
+            if (number >= 15 && number <= 35)
+            {
+                Console.WriteLine("Your number located between 15 and 35.");
+            }
+            if (number >= 36 && number <= 50)
+            {
+                if (number >= 36 && number <= 49) Console.WriteLine("Your number located between 36 and 50.");
+                if (number == 50) Console.WriteLine("Your number located between [36-50] & [50-100].");
+            }
+            if (number > 50 && number <= 100)
+            {
+                Console.WriteLine("Your number located between 50 and 100.");
+            }
         }
     }
 }
