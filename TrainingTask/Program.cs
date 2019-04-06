@@ -24,7 +24,9 @@ namespace TrainingTask
 
             //WeatherTranslate();
 
-            BonusCalculation();
+            //BonusCalculation();
+
+            ConsoleCalculatorVer2();
         }
 
         public static void AddSecondsToHours()
@@ -205,12 +207,12 @@ namespace TrainingTask
             Console.WriteLine("Enter a salary of a person:");
             var salary = Int32.Parse(Console.ReadLine());
             double bonus;
-            if (age < 5)
+            if (age > 0 && age < 5)
             {
                 bonus = salary * 0.1 + salary;
                 Console.WriteLine($"Your bonus is 10%. Your salary will be {bonus}.");
             }
-            else if (age >=5 && age <10)
+            else if (age >= 5 && age < 10)
             {
                 bonus = salary * 0.15 + salary;
                 Console.WriteLine($"Your bonus is 15%. Your salary will be {bonus}.");
@@ -234,6 +236,93 @@ namespace TrainingTask
             {
                 bonus = salary * 0.5 + salary;
                 Console.WriteLine($"Your bonus is 50%. Your salary will be {bonus}.");
+            }
+        }
+
+        public static void ConsoleCalculatorVer2()
+        {
+            int operand1;
+            int operand2;
+            while (true)
+            {
+                Console.WriteLine("Enter the first number:");
+                string strOperand1 = Console.ReadLine();
+                if (string.IsNullOrEmpty(strOperand1) || !Int32.TryParse(strOperand1, out operand1))
+                {
+                    Console.WriteLine("Please, enter a valid number.");
+                    Console.Clear();
+                    continue;
+                }
+                operand1 = Int32.Parse(strOperand1);
+
+                Console.WriteLine("Enter the second number:");
+                string strOperand2 = Console.ReadLine();
+                if (string.IsNullOrEmpty(strOperand2) || !Int32.TryParse(strOperand2, out operand2))
+                {
+                    Console.WriteLine("Please, enter a valid number.");
+                    Console.Clear();
+                    continue;
+                }
+                operand2 = Int32.Parse(strOperand2);
+
+                Console.WriteLine("Please enter an arithmetic sign (+,-,*,/,%).");
+                ArithmeticSignTimeStamp:
+                string sign = Console.ReadLine();
+                switch (sign)
+                {
+                    case "+":
+                        int sum = operand1 + operand2;
+                        Console.WriteLine($"Sum of numbers is {sum}");
+                        break;
+                    case "-":
+                        int difference = operand1 - operand2;
+                        Console.WriteLine($"Difference of numbers is {difference}");
+                        break;
+                    case "*":
+                        int multiplication = operand1 * operand2;
+                        Console.WriteLine($"Multiplication of numbers is {multiplication}");
+                        break;
+                    case "/":
+                        if (operand2 == 0)
+                        {
+                            Console.WriteLine("Cannot be divided by null");
+                            break;
+                        }
+                        else
+                        {
+                            int division = operand1 / operand2;
+                            Console.WriteLine($"Division of numbers is {division}");
+                        }
+                        break;
+                    case "%":
+                        if (operand2 == 0)
+                        {
+                            Console.WriteLine("Cannot be divided by null");
+                            break;
+                        }
+                        else
+                        {
+                            int remainderOfDivision = operand1 % operand2;
+                            Console.WriteLine($"Reminder of division of numbers is {remainderOfDivision}");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("You have entered a wrong symbol. Enter a valid sign.");
+                        goto ArithmeticSignTimeStamp;
+
+                        //
+                        // Sorry for 'goto'. I cannot imagine the better option how to avoid moving to start point ff i would used 'continue'. 
+                        //
+                }
+                Console.WriteLine("Would you like to continue? Press 'y' or 'n'.");
+                string decision = Console.ReadLine();
+                if (decision == "y") continue;
+                if (decision == "n") break;
+                if (decision != "y" || decision != "n")
+                {
+                    Console.WriteLine("You have entered wrong key word.");
+                    break;
+                }
             }
         }
     }
