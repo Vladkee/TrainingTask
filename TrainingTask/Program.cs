@@ -20,7 +20,9 @@ namespace TrainingTask
 
             //ConsoleCalculator();
 
-            Range0to100();
+            //Range0to100();
+
+            WeatherTranslate();
         }
 
         public static void AddSecondsToHours()
@@ -149,6 +151,48 @@ namespace TrainingTask
             if (number > 50 && number <= 100)
             {
                 Console.WriteLine("Your number located between 50 and 100.");
+            }
+        }
+
+        public static void WeatherTranslate()
+        {
+            Console.WriteLine("Enter a word with weather meaning in russian (солнце, дождь, ...");
+            string word = Console.ReadLine();
+            switch (word)
+            {
+                case "солнце":
+                    Console.WriteLine("Translation for word 'солнце' is 'sun'");
+                    break;
+                case "радуга":
+                    Console.WriteLine("Translation for word 'радуга' is 'rainbow'");
+                    break;
+                case "дождь":
+                    Console.WriteLine("Translation for word 'дождь' is 'rain'");
+                    break;
+                case "снег":
+                    Console.WriteLine("Translation for word 'снег' is 'snow'");
+                    break;
+                case "ветер":
+                    Console.WriteLine("Translation for word 'ветер' is 'wind'");
+                    break;
+                case "лето":
+                    Console.WriteLine("Translation for word 'лето' is 'summer'");
+                    break;
+                case "температура":
+                    Console.WriteLine("Translation for word 'температура' is 'temperature'");
+                    break;
+                case "зима":
+                    Console.WriteLine("Translation for word 'зима' is 'winter'");
+                    break;
+                case "весна":
+                    Console.WriteLine("Translation for word 'весна' is 'spring'");
+                    break;
+                case "осень":
+                    Console.WriteLine("Translation for word 'осень' is 'fall'");
+                    break;
+                default:
+                    Console.WriteLine("The is no translation for this word.");
+                    break;
             }
         }
     }
