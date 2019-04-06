@@ -26,7 +26,9 @@ namespace TrainingTask
 
             //BonusCalculation();
 
-            ConsoleCalculatorVer2();
+            //ConsoleCalculatorVer2();
+
+            Factorial();
         }
 
         public static void AddSecondsToHours()
@@ -324,6 +326,18 @@ namespace TrainingTask
                     break;
                 }
             }
+        }
+
+        public static void Factorial()
+        {
+            int factorial = 1;
+            Console.WriteLine("Enter a number:");
+            var number = Int32.Parse(Console.ReadLine());
+            for (int i = 1; i <= number; i++)
+            {
+                factorial = i * factorial;
+            }
+            Console.WriteLine($"Factorial {number} is {factorial}");
         }
     }
 }
