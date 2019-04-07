@@ -28,7 +28,9 @@ namespace TrainingTask
 
             //ConsoleCalculatorVer2();
 
-            Factorial();
+            //Factorial();
+
+            SignPicture();
         }
 
         public static void AddSecondsToHours()
@@ -338,6 +340,114 @@ namespace TrainingTask
                 factorial = i * factorial;
             }
             Console.WriteLine($"Factorial {number} is {factorial}");
+        }
+
+        public static void SignPicture()
+        {
+            //
+            // Single line.
+            //
+            for (int i = 0; i < 20; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n\n");
+
+            //
+            // Rectangle.
+            //
+            for (int i = 0; i < 20; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n");
+            for (int i = 0; i < 2; i++)
+            {
+                Console.Write("*");
+                for (int k = 0; k < 18; k++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*\n");
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n\n");
+
+            //
+            // Right triangle.
+            //
+            Console.Write("*\n");
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("*");
+                for (int k = 0; k < i; k++)
+                {
+                    Console.Write(" ");
+                }
+                Console.Write("*\n");
+            }
+            for (int i = 0; i < 7; i++)
+            {
+                Console.Write("*");
+            }
+            Console.Write("\n\n");
+
+            //
+            // Equilateral triangle. Решение подглядел в интернете, но понял и переделал под себя. Не могу понять только почему большая пустота сверху треугольника.
+            //
+            for (int i = 0; i < 16; i++) // i - amount of symbols.
+            {
+                Console.Write("\n");
+                for (int j = 0, k = 16; j < 16 && k > 0; k--, j++) // j - amount of spaces. k - amount of '*'.
+                {
+                    if (i < k || i < j)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("*");
+                    }
+                }
+            }
+            Console.Write("\n\n");
+
+            //
+            // Rhombus.
+            //
+            for (int i = 0; i < 16; i++) // i - amount of symbols.
+            {
+                Console.Write("\n");
+                for (int j = 0, k = 16; j < 16 && k > 0; k--, j++) // j - amount of spaces. k - amount of '*'.
+                {
+                    if (i < k || i < j)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("*");
+                    }
+                }
+            }
+            for (int i = 0; i < 16; i++) // i - amount of symbols.
+            {
+                Console.Write("\n");
+                for (int j = 0, k = 16; j < 16 && k > 0; k--, j++) // j - amount of spaces. k - amount of '*'.
+                {
+                    if (i > k || i > j)
+                    {
+                        Console.Write(" ");
+                    }
+                    else
+                    {
+                        Console.Write("*");
+                    }
+                }
+            }
         }
     }
 }
