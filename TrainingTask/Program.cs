@@ -14,7 +14,11 @@ namespace TrainingTask
 
             //CustomersRoutes();
 
-            EvenNumbersInNumber();
+            //SumBetweenAandB();
+
+            //EvenNumbersInNumber();
+
+            AverageNumber();
         }
 
         public static void PrimeNumber()
@@ -154,6 +158,44 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine($"{count} even number(s) in your number is/are {strCount}");
+        }
+
+        public static void AverageNumber()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+
+            int firstNumber;
+            int sum = 0;
+            int average = 0;
+            int count = 0;
+
+            if (number1 <= number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    count++;
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                average = sum / count;
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
+            }
+            else if (number1 >= number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    count++;
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                average = sum / count;
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
+            }
         }
     }
 }
