@@ -14,7 +14,7 @@ namespace TrainingTask
 
             //CustomersRoutes();
 
-            SumBetweenAandB();
+            EvenNumbersInNumber();
         }
 
         public static void PrimeNumber()
@@ -132,6 +132,28 @@ namespace TrainingTask
                 }
                 Console.WriteLine($"Sum of the numbers between {number1} and {number2} are {sum }");
             }
+        }
+
+        public static void EvenNumbersInNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            var number = Int32.Parse(Console.ReadLine()); //123
+            int temp;
+            int count = 0;
+            string strCount = "";
+
+            while (number > 0)
+            {
+                temp = number; //123 //12 //1
+                temp %= 10; //3 //2 //1
+                number /= 10; //12
+                if (temp % 2 == 0)
+                {
+                    strCount = strCount + temp + " ";
+                    count++;
+                }
+            }
+            Console.WriteLine($"{count} even number(s) in your number is/are {strCount}");
         }
     }
 }
