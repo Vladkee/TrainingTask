@@ -10,7 +10,9 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            PrimeNumber();
+            //PrimeNumber();
+
+            CustomersRoutes();
         }
 
         public static void PrimeNumber()
@@ -49,6 +51,20 @@ namespace TrainingTask
             }
             if (count == 2) Console.WriteLine("Your number is prime\n");
             else Console.WriteLine("Your number is not prime\n");
+        }
+
+        public static void CustomersRoutes()
+        {
+            Console.WriteLine("How many customers?");
+            var customers = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            int routes = 1;
+            do
+            {
+                routes = routes * customers;
+                customers--;
+            } while (customers > 0);
+            Console.WriteLine($"{routes} routes.");
         }
     }
 }
