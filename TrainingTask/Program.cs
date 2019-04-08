@@ -12,7 +12,9 @@ namespace TrainingTask
         {
             //PrimeNumber();
 
-            CustomersRoutes();
+            //CustomersRoutes();
+
+            SumBetweenAandB();
         }
 
         public static void PrimeNumber()
@@ -65,6 +67,71 @@ namespace TrainingTask
                 customers--;
             } while (customers > 0);
             Console.WriteLine($"{routes} routes.");
+        }
+
+        public static void SumBetweenAandB()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+
+            //
+            // Odd numbers.
+            //
+            int firstNumber;
+            string oddNumbers = "";
+            int sum = 0;
+            if (number1 < number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    if (firstNumber % 2 != 0)
+                    {
+                        oddNumbers = oddNumbers + firstNumber + " ";
+                    }
+                    firstNumber++;
+                }
+                Console.WriteLine($"Odd numbers between {number1} and {number2} are {oddNumbers}\n");
+            }
+            else if (number1 > number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    if (firstNumber % 2 != 0)
+                    {
+                        oddNumbers = oddNumbers + firstNumber + " ";
+                    }
+                    firstNumber++;
+                }
+                Console.WriteLine($"Odd numbers between {number1} and {number2} are {oddNumbers}\n");
+            }
+
+            //
+            // Sum of the numbers.
+            //
+            if (number1 < number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} are {sum}");
+            }
+            else if (number1 > number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} are {sum }");
+            }
         }
     }
 }
