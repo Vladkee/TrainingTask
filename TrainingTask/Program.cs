@@ -10,7 +10,7 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            //PrimeNumber();
+            PrimeNumber();
 
             //CustomersRoutes();
 
@@ -18,7 +18,7 @@ namespace TrainingTask
 
             //EvenNumbersInNumber();
 
-            AverageNumber();
+            //AverageNumber();
         }
 
         public static void PrimeNumber()
@@ -197,5 +197,6 @@ namespace TrainingTask
                 Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
             }
         }
+        
     }
 }
