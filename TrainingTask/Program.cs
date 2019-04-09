@@ -19,6 +19,8 @@ namespace TrainingTask
             //EvenNumbersInNumber();
 
             //AverageNumber();
+
+            SkyDistance();
         }
 
         public static void PrimeNumber()
@@ -197,6 +199,10 @@ namespace TrainingTask
                 Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
             }
         }
-        
+
+        public static void SkyDistance()
+        {
+
+        }
     }
 }
