@@ -20,7 +20,9 @@ namespace TrainingTask
 
             //AverageNumber();
 
-            SkiDistance();
+            //SkiDistance();
+
+            SmartMultipliplication();
         }
 
         public static void PrimeNumber()
@@ -215,6 +217,31 @@ namespace TrainingTask
             Console.WriteLine();
             Console.WriteLine($"The distance is {sum} km for {day} days\n");
             Console.WriteLine($"On {day+1} day the distance will be 100km");
+        }
+
+        public static void SmartMultipliplication()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+            int counter = 0;
+            int multiplication = 0;
+
+            if (number2 < 0)
+            {
+                number2 = number2 * -1;
+            }
+            if (number1 < 0)
+            {
+                number1 = number1 * -1;
+            } 
+            while (counter < number2)
+            {
+                multiplication = multiplication + number1;
+                counter++;
+            }
+            Console.WriteLine($"Number {number1} * {number2} = {multiplication}");
         }
     }
 }
