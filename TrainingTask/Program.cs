@@ -24,7 +24,9 @@ namespace TrainingTask
 
             //SmartMultipliplication();
 
-            SquareOfNumber();
+            //SquareOfNumber();
+
+            Fibonachi1();
         }
 
         public static void PrimeNumber()
@@ -274,6 +276,25 @@ namespace TrainingTask
             //}
             //Console.WriteLine(strSquare);
 
+        }
+
+        public static void Fibonachi1()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int sum = 0;
+            int firstNumber = 1;
+            int secondNumber = 1;
+            string strFibonachi = "";
+            while (endNumber >= sum)
+            {
+                sum = firstNumber + secondNumber; // 1 + 1 = 2 // 1 + 0 = 1 // 0 + 1 = 1 // 1 + 1 = 2 // 1 + 2 = 3 // 
+                firstNumber = secondNumber; // 1 --> 1 // 1 --> 0 // 0 --> 1 // 1 --> 1 // 
+                secondNumber = sum; // 1 --> 0 //0 --> 1 // 1 --> 1 // 1 --> 2//
+                if (sum > endNumber) break;
+                strFibonachi = strFibonachi + sum + " ";
+            }
+            Console.WriteLine(strFibonachi);
         }
     }
 }
