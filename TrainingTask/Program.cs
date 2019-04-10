@@ -10,7 +10,7 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            PrimeNumber();
+            //PrimeNumber();
 
             //CustomersRoutes();
 
@@ -20,7 +20,7 @@ namespace TrainingTask
 
             //AverageNumber();
 
-            SkyDistance();
+            SkiDistance();
         }
 
         public static void PrimeNumber()
@@ -200,9 +200,21 @@ namespace TrainingTask
             }
         }
 
-        public static void SkyDistance()
+        public static void SkiDistance()
         {
-
+            double distance = 10;
+            double sum = 10;
+            int day = 1;
+            while (sum < 90)
+            {
+                day++;
+                distance = distance * 0.1 + distance;
+                sum = sum + distance;
+             Console.WriteLine($"{day} day = {distance} km");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"The distance is {sum} km for {day} days\n");
+            Console.WriteLine($"On {day+1} day the distance will be 100km");
         }
     }
 }
