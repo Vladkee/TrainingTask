@@ -22,7 +22,9 @@ namespace TrainingTask
 
             //SkiDistance();
 
-            SmartMultipliplication();
+            //SmartMultipliplication();
+
+            SquareOfNumber();
         }
 
         public static void PrimeNumber()
@@ -242,6 +244,36 @@ namespace TrainingTask
                 counter++;
             }
             Console.WriteLine($"Number {number1} * {number2} = {multiplication}");
+        }
+
+        public static void SquareOfNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int square;
+            string strSquare = "";
+
+            //
+            // Квадраты чисел не больше указанного числа.
+            //
+            for (int i = 1; i < endNumber; i++)
+            {
+                square = i * i;
+                if (square > endNumber) break;
+                strSquare = strSquare + square + " ";
+            }
+            Console.WriteLine(strSquare);
+
+            //
+            // Квадраты чисел до указанного числа.
+            //
+            //for (int i = 1; i < endNumber; i++)
+            //{
+            //    square = i * i;
+            //    strSquare = strSquare + square + " ";
+            //}
+            //Console.WriteLine(strSquare);
+
         }
     }
 }
