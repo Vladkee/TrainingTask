@@ -28,7 +28,9 @@ namespace TrainingTask
 
             //Fibonachi1();
 
-            Fibonachi2();
+            //Fibonachi2();
+
+            SwapNumber();
         }
 
         public static void PrimeNumber()
@@ -317,6 +319,25 @@ namespace TrainingTask
                 strFibonachi = strFibonachi + sum + " ";
             }
             Console.WriteLine(strFibonachi);
+        }
+
+        public static void SwapNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            Console.WriteLine($"Swapped number is {additional}");
         }
     }
 }
