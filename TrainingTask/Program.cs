@@ -26,7 +26,9 @@ namespace TrainingTask
 
             //SquareOfNumber();
 
-            Fibonachi1();
+            //Fibonachi1();
+
+            Fibonachi2();
         }
 
         public static void PrimeNumber()
@@ -292,6 +294,26 @@ namespace TrainingTask
                 firstNumber = secondNumber; // 1 --> 1 // 1 --> 0 // 0 --> 1 // 1 --> 1 // 
                 secondNumber = sum; // 1 --> 0 //0 --> 1 // 1 --> 1 // 1 --> 2//
                 if (sum > endNumber) break;
+                strFibonachi = strFibonachi + sum + " ";
+            }
+            Console.WriteLine(strFibonachi);
+        }
+
+        public static void Fibonachi2()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int sum = 0;
+            int firstNumber = 0;
+            int secondNumber = 1;
+            string strFibonachi = "";
+            int counter = 0;
+            while (counter < endNumber)
+            {
+                sum = firstNumber + secondNumber;
+                firstNumber = secondNumber;
+                secondNumber = sum;
+                counter++;
                 strFibonachi = strFibonachi + sum + " ";
             }
             Console.WriteLine(strFibonachi);
