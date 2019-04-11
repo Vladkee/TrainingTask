@@ -30,7 +30,9 @@ namespace TrainingTask
 
             //Fibonachi2();
 
-            SwapNumber();
+            //SwapNumber();
+
+            ParseNumber();
         }
 
         public static void PrimeNumber()
@@ -338,6 +340,49 @@ namespace TrainingTask
                 number /= 10;
             }
             Console.WriteLine($"Swapped number is {additional}");
+        }
+
+        public static void ParseNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            string parseNumbers = "";
+
+            //
+            // First version.
+            //
+            //for (int i = 0; i < lenght; i++)
+            //{
+            //    temp = number % 10;
+            //    parseNumbers = parseNumbers + temp + " ";
+            //    number /= 10;
+            //}
+            //Console.WriteLine($"Parsed numbers are {parseNumbers}");
+
+            //
+            // Second version.
+            //
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = additional % 10;
+                parseNumbers = parseNumbers + temp + " ";
+                additional /= 10;
+            }
+            Console.WriteLine($"Parsed numbers are {parseNumbers}");
+
+
         }
     }
 }
