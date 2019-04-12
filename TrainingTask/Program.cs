@@ -32,7 +32,9 @@ namespace TrainingTask
 
             //SwapNumber();
 
-            ParseNumber();
+            //ParseNumber();
+
+            DegreeOfNumber();
         }
 
         public static void PrimeNumber()
@@ -222,11 +224,11 @@ namespace TrainingTask
                 day++;
                 distance = distance * 0.1 + distance;
                 sum = sum + distance;
-             Console.WriteLine($"{day} day = {distance} km");
+                Console.WriteLine($"{day} day = {distance} km");
             }
             Console.WriteLine();
             Console.WriteLine($"The distance is {sum} km for {day} days\n");
-            Console.WriteLine($"On {day+1} day the distance will be 100km");
+            Console.WriteLine($"On {day + 1} day the distance will be 100km");
         }
 
         public static void SmartMultipliplication()
@@ -245,7 +247,7 @@ namespace TrainingTask
             if (number1 < 0)
             {
                 number1 = number1 * -1;
-            } 
+            }
             while (counter < number2)
             {
                 multiplication = multiplication + number1;
@@ -381,8 +383,23 @@ namespace TrainingTask
                 additional /= 10;
             }
             Console.WriteLine($"Parsed numbers are {parseNumbers}");
+        }
+
+        public static void DegreeOfNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            int number = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a degree:");
+            int degree = Int32.Parse(Console.ReadLine());
+            int temp = 1;
 
 
+            for (int i = 0; i < degree; i++)
+            {
+                temp *= number; //1=1*5=5 //5=5*5
+            }
+            Console.WriteLine($"The number {number} in {degree} degree will be {temp}");
         }
     }
 }
+
