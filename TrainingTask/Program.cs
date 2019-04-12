@@ -34,7 +34,9 @@ namespace TrainingTask
 
             //ParseNumber();
 
-            DegreeOfNumber();
+            //DegreeOfNumber();
+
+            DeletedNumber();
         }
 
         public static void PrimeNumber()
@@ -399,6 +401,44 @@ namespace TrainingTask
                 temp *= number; //1=1*5=5 //5=5*5
             }
             Console.WriteLine($"The number {number} in {degree} degree will be {temp}");
+        }
+
+        public static void DeletedNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            Console.WriteLine("Enter a number to delete it:");
+            var delNumber = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            int temp = 0;
+            string parseNumbers = "";
+
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = additional % 10;
+                if (temp != delNumber)
+                {
+                    parseNumbers = parseNumbers + temp + "";
+                    additional /= 10;
+                }
+                else if (temp == delNumber)
+                {
+                    additional /= 10;
+                    continue;
+                }
+            }
+            Console.WriteLine($"Number {delNumber} was deleted. The new number is {parseNumbers}");
         }
     }
 }
