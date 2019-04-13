@@ -36,7 +36,11 @@ namespace TrainingTask
 
             //DegreeOfNumber();
 
-            DeletedNumber();
+            //DeletedNumber();
+
+            //BiggestNumber(); REDO
+
+            Siracuz();
         }
 
         public static void PrimeNumber()
@@ -439,6 +443,46 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine($"Number {delNumber} was deleted. The new number is {parseNumbers}");
+        }
+
+        public static void BiggestNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            int max = 0;
+            for (int i = 0; i < lenght; i++)
+            {
+                //12345
+                temp = number % 10; //5
+                max = temp;
+                number /= 10;
+            }
+            Console.WriteLine($"The biggest number is {max}");
+        }
+
+        public static void Siracuz()
+        {
+            Console.WriteLine("Enter a number:");
+            int number = Int32.Parse(Console.ReadLine());
+            int count = 0;
+
+            while (number != 1)
+            {
+                if (number % 2 == 0)
+                {
+                    number = number / 2;
+                    count++;
+                }
+                else if (number % 2 != 0)
+                {
+                    number = number * 3 + 1;
+                    count++;
+                }
+                Console.WriteLine($"On {count} step the number will be equal {number}.");
+            }
         }
     }
 }
