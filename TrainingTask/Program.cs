@@ -26,7 +26,9 @@ namespace TrainingTask
             //    Console.WriteLine(item + " ");
             //}
 
-            Array3();
+            //Array3();
+
+            Array4();
 
         }
 
@@ -138,7 +140,30 @@ namespace TrainingTask
 
         public static void Array4()
         {
+            int[] array = new int[] { 1,3,6,3,6,2,4,8};
+            Console.WriteLine(string.Join(",", array));
+            Console.WriteLine();
+            int sum = 0;
+            int arithmetic = 0;
+            string strArray = "";
 
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum = sum + array[i];
+            }
+            Console.WriteLine($"Sum = {sum}.\n");
+
+            arithmetic = sum / array.Length;
+            Console.WriteLine($"Arithmetic number is {arithmetic}.\n");
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > arithmetic)
+                {
+                    strArray += array[i] + " ";
+                }
+            }
+            Console.WriteLine($"Numbers {strArray} more arithmetic number {arithmetic}.");
         }
     }
 }
