@@ -10,10 +10,27 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Massive();
+            //Array1();
+
+            //var array = Program.GetArray(10);
+            //foreach (var item in array)
+            //{
+            //    Console.WriteLine(item + " ");
+            //}
+
+            //Console.WriteLine();
+            //var updatedArray = Program.DeletDuplicates(array);
+            //Console.WriteLine();
+            //foreach (var item in updatedArray)
+            //{
+            //    Console.WriteLine(item + " ");
+            //}
+
+            Array3();
+
         }
 
-        public static void Massive()
+        public static void Array1()
         {
             Console.WriteLine("Enter a size of array:");
             var size = Int32.Parse(Console.ReadLine());
@@ -46,7 +63,7 @@ namespace TrainingTask
             {
                 if (array[i] % 2 != 0)
                 {
-                    strOddNumbers += array[i] + " "; 
+                    strOddNumbers += array[i] + " ";
                 }
             }
             Console.WriteLine($"Odd numbers: {strOddNumbers}\n");
@@ -58,5 +75,71 @@ namespace TrainingTask
             }
             Console.WriteLine($"max = {max}, min = {min}");
         }
+
+        public static int[] GetArray(int count)
+        {
+            var random = new Random();
+            var array = new int[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                array[i] = random.Next(1, 20);
+            }
+            return array;
+        }
+
+        public static int[] DeletDuplicates(int[] array)
+        {
+            var arrayWithoutDuplicates = new int[array.Length];
+            arrayWithoutDuplicates[0] = array[0];
+            int position = 0;
+
+            var isDuplicate = false;
+
+            for (int i = 1; i < array.Length; i++)
+            {
+                for (int j = 0; j < position + 1; j++)
+                {
+                    if (array[i] == arrayWithoutDuplicates[j])
+                    {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+
+                if (!isDuplicate)
+                {
+                    arrayWithoutDuplicates[position] = array[i];
+                    position++;
+                    isDuplicate = false;
+                }
+            }
+            return arrayWithoutDuplicates;
+        }
+
+        public static void Array3()
+        {
+            int[] array = new int[] { 1, 6, 3, 7, 5, 6, 2 };
+            Console.WriteLine("Enter the max number:");
+            var max = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the min number:");
+            var min = Int32.Parse(Console.ReadLine());
+            string strIndex = "";
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < max && array[i] > min)
+                {
+                    strIndex += i + " ";
+                }
+            }
+            Console.WriteLine($"Indexs {strIndex} inside range.");
+        }
+
+        public static void Array4()
+        {
+
+        }
     }
 }
+
