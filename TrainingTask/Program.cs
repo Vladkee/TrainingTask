@@ -38,9 +38,11 @@ namespace TrainingTask
 
             //DeletedNumber();
 
-            //BiggestNumber(); REDO
+            BiggestNumber();
 
-            Siracuz();
+            //Siracuz();
+
+            //RandomNumber();
         }
 
         public static void PrimeNumber()
@@ -455,9 +457,8 @@ namespace TrainingTask
             int max = 0;
             for (int i = 0; i < lenght; i++)
             {
-                //12345
-                temp = number % 10; //5
-                max = temp;
+                temp = number % 10;
+                if (max < temp) max = temp;
                 number /= 10;
             }
             Console.WriteLine($"The biggest number is {max}");
@@ -483,6 +484,11 @@ namespace TrainingTask
                 }
                 Console.WriteLine($"On {count} step the number will be equal {number}.");
             }
+        }
+
+        public static void RandomNumber()
+        {
+
         }
     }
 }
