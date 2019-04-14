@@ -38,11 +38,11 @@ namespace TrainingTask
 
             //DeletedNumber();
 
-            BiggestNumber();
+            //BiggestNumber();
 
             //Siracuz();
 
-            //RandomNumber();
+            RandomNumber();
         }
 
         public static void PrimeNumber()
@@ -488,7 +488,22 @@ namespace TrainingTask
 
         public static void RandomNumber()
         {
-
+            int random = new Random().Next(1, 100);
+            int number = 0;
+            while (number != random)
+            {
+                Console.WriteLine("Enter a number from 1 to 100:");
+                number = Int32.Parse(Console.ReadLine());
+                if (number < random)
+                {
+                    Console.WriteLine("Try to enter a number more higher.");
+                }
+                else if (number > random)
+                {
+                    Console.WriteLine("Try to enter a number more lower.");
+                }
+                else Console.WriteLine("You've guessed!");
+            }
         }
     }
 }
