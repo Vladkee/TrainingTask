@@ -10,7 +10,501 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+            //PrimeNumber();
+
+            //CustomersRoutes();
+
+            //SumBetweenAandB();
+
+            //EvenNumbersInNumber();
+
+            //AverageNumber();
+
+            //SkiDistance();
+
+            //SmartMultipliplication();
+
+            //SquareOfNumber();
+
+            //Fibonachi1();
+
+            //Fibonachi2();
+
+            //SwapNumber();
+
+            //ParseNumber();
+
+            //DegreeOfNumber();
+
+            //DeletedNumber();
+
+            //BiggestNumber();
+
+            //Siracuz();
+
+            RandomNumber();
+        }
+
+        public static void PrimeNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            var number = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            int[] mas1 = new int[] { 2, 3, 5, 6, 9 };
+            string dividers = "";
+            if (number % 2 == 0) Console.WriteLine($"Number {number} is even\n");
+            else Console.WriteLine($"Number {number} is odd\n");
+
+            //
+            // Dividers of the number.
+            //
+            for (int k = 0; k < mas1.Length; k++)
+            {
+                if (number % mas1[k] == 0)
+                {
+                    dividers = dividers + mas1[k] + " ";
+                }
+            }
+            if ((number % 2 == 0) || (number % 3 == 0) || (number % 5 == 0) || (number % 6 == 0) || (number % 9 == 0))
+            {
+                Console.WriteLine($"Number {number} is divided by {dividers}\n");
+            }
+            else Console.WriteLine($"You cannot divide the number {number} by 2,3,5,6,9.\n");
+
+            //
+            // IsPrime?
+            //
+            int count = 0;
+            for (int i = 1; i <= number; i++)
+            {
+                if (number % i == 0) count++;
+            }
+            if (count == 2) Console.WriteLine("Your number is prime\n");
+            else Console.WriteLine("Your number is not prime\n");
+        }
+
+        public static void CustomersRoutes()
+        {
+            Console.WriteLine("How many customers?");
+            var customers = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            int routes = 1;
+            do
+            {
+                routes = routes * customers;
+                customers--;
+            } while (customers > 0);
+            Console.WriteLine($"{routes} routes.");
+        }
+
+        public static void SumBetweenAandB()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+
+            //
+            // Odd numbers.
+            //
+            int firstNumber;
+            string oddNumbers = "";
+            int sum = 0;
+            if (number1 < number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    if (firstNumber % 2 != 0)
+                    {
+                        oddNumbers = oddNumbers + firstNumber + " ";
+                    }
+                    firstNumber++;
+                }
+                Console.WriteLine($"Odd numbers between {number1} and {number2} are {oddNumbers}\n");
+            }
+            else if (number1 > number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    if (firstNumber % 2 != 0)
+                    {
+                        oddNumbers = oddNumbers + firstNumber + " ";
+                    }
+                    firstNumber++;
+                }
+                Console.WriteLine($"Odd numbers between {number1} and {number2} are {oddNumbers}\n");
+            }
+
+            //
+            // Sum of the numbers.
+            //
+            if (number1 < number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} are {sum}");
+            }
+            else if (number1 > number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} are {sum }");
+            }
+        }
+
+        public static void EvenNumbersInNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            var number = Int32.Parse(Console.ReadLine()); //123
+            int temp;
+            int count = 0;
+            string strCount = "";
+
+            while (number > 0)
+            {
+                temp = number; //123 //12 //1
+                temp %= 10; //3 //2 //1
+                number /= 10; //12
+                if (temp % 2 == 0)
+                {
+                    strCount = strCount + temp + " ";
+                    count++;
+                }
+            }
+            Console.WriteLine($"{count} even number(s) in your number is/are {strCount}");
+        }
+
+        public static void AverageNumber()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+
+            int firstNumber;
+            int sum = 0;
+            int average = 0;
+            int count = 0;
+
+            if (number1 <= number2)
+            {
+                firstNumber = number1 + 1;
+                while ((firstNumber > number1) & (firstNumber < number2))
+                {
+                    count++;
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                average = sum / count;
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
+            }
+            else if (number1 >= number2)
+            {
+                firstNumber = number2 + 1;
+                while ((firstNumber > number2) & (firstNumber < number1))
+                {
+                    count++;
+                    sum = sum + firstNumber;
+                    firstNumber++;
+                }
+                average = sum / count;
+                Console.WriteLine($"Sum of the numbers between {number1} and {number2} is {sum} and average is {average}");
+            }
+        }
+
+        public static void SkiDistance()
+        {
+            double distance = 10;
+            double sum = 10;
+            int day = 1;
+            while (sum < 90)
+            {
+                day++;
+                distance = distance * 0.1 + distance;
+                sum = sum + distance;
+                Console.WriteLine($"{day} day = {distance} km");
+            }
+            Console.WriteLine();
+            Console.WriteLine($"The distance is {sum} km for {day} days\n");
+            Console.WriteLine($"On {day + 1} day the distance will be 100km");
+        }
+
+        public static void SmartMultipliplication()
+        {
+            Console.WriteLine("Enter the first number:");
+            var number1 = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the second number:");
+            var number2 = Int32.Parse(Console.ReadLine());
+            int counter = 0;
+            int multiplication = 0;
+
+            if (number2 < 0)
+            {
+                number2 = number2 * -1;
+            }
+            if (number1 < 0)
+            {
+                number1 = number1 * -1;
+            }
+            while (counter < number2)
+            {
+                multiplication = multiplication + number1;
+                counter++;
+            }
+            Console.WriteLine($"Number {number1} * {number2} = {multiplication}");
+        }
+
+        public static void SquareOfNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int square;
+            string strSquare = "";
+
+            //
+            // Квадраты чисел не больше указанного числа.
+            //
+            for (int i = 1; i < endNumber; i++)
+            {
+                square = i * i;
+                if (square > endNumber) break;
+                strSquare = strSquare + square + " ";
+            }
+            Console.WriteLine(strSquare);
+
+            //
+            // Квадраты чисел до указанного числа.
+            //
+            //for (int i = 1; i < endNumber; i++)
+            //{
+            //    square = i * i;
+            //    strSquare = strSquare + square + " ";
+            //}
+            //Console.WriteLine(strSquare);
+
+        }
+
+        public static void Fibonachi1()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int sum = 0;
+            int firstNumber = 1;
+            int secondNumber = 1;
+            string strFibonachi = "";
+            while (endNumber >= sum)
+            {
+                sum = firstNumber + secondNumber; // 1 + 1 = 2 // 1 + 0 = 1 // 0 + 1 = 1 // 1 + 1 = 2 // 1 + 2 = 3 // 
+                firstNumber = secondNumber; // 1 --> 1 // 1 --> 0 // 0 --> 1 // 1 --> 1 // 
+                secondNumber = sum; // 1 --> 0 //0 --> 1 // 1 --> 1 // 1 --> 2//
+                if (sum > endNumber) break;
+                strFibonachi = strFibonachi + sum + " ";
+            }
+            Console.WriteLine(strFibonachi);
+        }
+
+        public static void Fibonachi2()
+        {
+            Console.WriteLine("Enter a number:");
+            var endNumber = Int32.Parse(Console.ReadLine());
+            int sum = 0;
+            int firstNumber = 0;
+            int secondNumber = 1;
+            string strFibonachi = "";
+            int counter = 0;
+            while (counter < endNumber)
+            {
+                sum = firstNumber + secondNumber;
+                firstNumber = secondNumber;
+                secondNumber = sum;
+                counter++;
+                strFibonachi = strFibonachi + sum + " ";
+            }
+            Console.WriteLine(strFibonachi);
+        }
+
+        public static void SwapNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            Console.WriteLine($"Swapped number is {additional}");
+        }
+
+        public static void ParseNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            string parseNumbers = "";
+
+            //
+            // First version.
+            //
+            //for (int i = 0; i < lenght; i++)
+            //{
+            //    temp = number % 10;
+            //    parseNumbers = parseNumbers + temp + " ";
+            //    number /= 10;
+            //}
+            //Console.WriteLine($"Parsed numbers are {parseNumbers}");
+
+            //
+            // Second version.
+            //
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = additional % 10;
+                parseNumbers = parseNumbers + temp + " ";
+                additional /= 10;
+            }
+            Console.WriteLine($"Parsed numbers are {parseNumbers}");
+        }
+
+        public static void DegreeOfNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            int number = Int32.Parse(Console.ReadLine());
+            Console.WriteLine("Enter a degree:");
+            int degree = Int32.Parse(Console.ReadLine());
+            int temp = 1;
+
+
+            for (int i = 0; i < degree; i++)
+            {
+                temp *= number; //1=1*5=5 //5=5*5
+            }
+            Console.WriteLine($"The number {number} in {degree} degree will be {temp}");
+        }
+
+        public static void DeletedNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            Console.WriteLine("Enter a number to delete it:");
+            var delNumber = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+            int temp = 0;
+            string parseNumbers = "";
+
+            int additional = 0;
+
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                additional = additional * 10;
+                additional += temp;
+                number /= 10;
+            }
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = additional % 10;
+                if (temp != delNumber)
+                {
+                    parseNumbers = parseNumbers + temp + "";
+                    additional /= 10;
+                }
+                else if (temp == delNumber)
+                {
+                    additional /= 10;
+                    continue;
+                }
+            }
+            Console.WriteLine($"Number {delNumber} was deleted. The new number is {parseNumbers}");
+        }
+
+        public static void BiggestNumber()
+        {
+            Console.WriteLine("Enter a number:");
+            string strNumber = Console.ReadLine();
+            int number = Int32.Parse(strNumber);
+            int lenght = strNumber.Length;
+            int temp = 0;
+            int max = 0;
+            for (int i = 0; i < lenght; i++)
+            {
+                temp = number % 10;
+                if (max < temp) max = temp;
+                number /= 10;
+            }
+            Console.WriteLine($"The biggest number is {max}");
+        }
+
+        public static void Siracuz()
+        {
+            Console.WriteLine("Enter a number:");
+            int number = Int32.Parse(Console.ReadLine());
+            int count = 0;
+
+            while (number != 1)
+            {
+                if (number % 2 == 0)
+                {
+                    number = number / 2;
+                    count++;
+                }
+                else if (number % 2 != 0)
+                {
+                    number = number * 3 + 1;
+                    count++;
+                }
+                Console.WriteLine($"On {count} step the number will be equal {number}.");
+            }
+        }
+
+        public static void RandomNumber()
+        {
+            int random = new Random().Next(1, 100);
+            int number = 0;
+            while (number != random)
+            {
+                Console.WriteLine("Enter a number from 1 to 100:");
+                number = Int32.Parse(Console.ReadLine());
+                if (number < random)
+                {
+                    Console.WriteLine("Try to enter a number more higher.");
+                }
+                else if (number > random)
+                {
+                    Console.WriteLine("Try to enter a number more lower.");
+                }
+                else Console.WriteLine("You've guessed!");
+            }
         }
     }
 }
+
