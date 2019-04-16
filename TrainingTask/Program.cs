@@ -12,25 +12,13 @@ namespace TrainingTask
         {
             //Array1();
 
-            //var array = Program.GetArray(10);
-            //foreach (var item in array)
-            //{
-            //    Console.WriteLine(item + " ");
-            //}
-
-            //Console.WriteLine();
-            //var updatedArray = Program.DeletDuplicates(array);
-            //Console.WriteLine();
-            //foreach (var item in updatedArray)
-            //{
-            //    Console.WriteLine(item + " ");
-            //}
-
             //Array3();
 
             //Array4();
 
-            MyReverse();
+            //MyReverse();
+
+            SubArray(GetArray(10), 6, 6);
 
         }
 
@@ -80,15 +68,16 @@ namespace TrainingTask
             Console.WriteLine($"max = {max}, min = {min}");
         }
 
-        public static int[] GetArray(int count)
+        public static int[] GetArray(int size)
         {
             var random = new Random();
-            var array = new int[count];
+            var array = new int[size];
 
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < size; i++)
             {
                 array[i] = random.Next(1, 20);
             }
+
             return array;
         }
 
@@ -142,7 +131,7 @@ namespace TrainingTask
 
         public static void Array4()
         {
-            int[] array = new int[] { 1,3,6,3,6,2,4,8};
+            int[] array = new int[] { 1, 3, 6, 3, 6, 2, 4, 8 };
             Console.WriteLine(string.Join(",", array));
             Console.WriteLine();
             int sum = 0;
@@ -170,14 +159,14 @@ namespace TrainingTask
 
         public static void MyReverse()
         {
-            int[] array = new int[] {1,2,3,4,5,6,7 };
+            int[] array = new int[] { 1, 2, 3, 4, 5, 6, 7 };
             int temp = 0;
             int length = array.Length;
             Console.WriteLine("Array before:");
             Console.WriteLine(string.Join(",", array));
             Console.WriteLine();
 
-            for (int i = 0, j = length-1; i < j & j < length; i++, j--)
+            for (int i = 0, j = length - 1; i < j & j < length; i++, j--)
             {
                 temp = array[i];
                 array[i] = array[j];
@@ -185,6 +174,44 @@ namespace TrainingTask
             }
             Console.WriteLine("Array after:");
             Console.WriteLine(string.Join(",", array));
+        }
+
+        public static int[] SubArray(int[] array, int index, int count)
+        {
+            Console.WriteLine(string.Join(",", array));
+            Console.WriteLine();
+
+            int[] array2 = new int[count];
+            int size = count + index;
+
+            for (int i = 0; i < count; i++)
+            {
+                if (size > array.Length)
+                {
+                    while (index + i < array.Length)
+                    {
+                        array2[i] = array[index + i];
+                        i++;
+                    }
+                }
+                else
+                {
+                    array2[i] = array[index + i];
+                }
+            }
+            Console.WriteLine(string.Join(",", array2));
+            Console.WriteLine();
+
+            for (int i = 0; i < array2.Length; i++)
+            {
+                if (array2[i] == 0)
+                {
+                    array2[i] = 1;
+                }
+            }
+            Console.WriteLine(string.Join(",", array2));
+
+            return array;
         }
     }
 }
