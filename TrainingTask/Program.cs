@@ -28,7 +28,9 @@ namespace TrainingTask
 
             //Array3();
 
-            Array4();
+            //Array4();
+
+            MyReverse();
 
         }
 
@@ -164,6 +166,25 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine($"Numbers {strArray} more arithmetic number {arithmetic}.");
+        }
+
+        public static void MyReverse()
+        {
+            int[] array = new int[] {1,2,3,4,5,6,7 };
+            int temp = 0;
+            int length = array.Length;
+            Console.WriteLine("Array before:");
+            Console.WriteLine(string.Join(",", array));
+            Console.WriteLine();
+
+            for (int i = 0, j = length-1; i < j & j < length; i++, j--)
+            {
+                temp = array[i];
+                array[i] = array[j];
+                array[j] = temp;
+            }
+            Console.WriteLine("Array after:");
+            Console.WriteLine(string.Join(",", array));
         }
     }
 }
