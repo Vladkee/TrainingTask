@@ -18,7 +18,9 @@ namespace TrainingTask
 
             //MyReverse();
 
-            SubArray(GetArray(10), 6, 6);
+            //SubArray(GetArray(10), 6, 6);
+
+            IncreaseArray(GetArray(10), 7);
 
         }
 
@@ -209,6 +211,25 @@ namespace TrainingTask
                     array2[i] = 1;
                 }
             }
+            Console.WriteLine(string.Join(",", array2));
+
+            return array;
+        }
+
+        public static int[] IncreaseArray(int[] array, int value)
+        {
+            Console.WriteLine("Array before:");
+            Console.WriteLine(string.Join(",", array));
+            Console.WriteLine();
+
+            int[] array2 = new int[array.Length + 1];
+
+            array2[0] = value; //7
+            for (int i = 1, j = 0; i < array2.Length; i++, j++)
+            {
+                array2[i] = array[j];
+            }
+            Console.WriteLine("Array after:");
             Console.WriteLine(string.Join(",", array2));
 
             return array;
