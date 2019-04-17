@@ -20,7 +20,9 @@ namespace TrainingTask
 
             //SubArray(GetArray(10), 6, 6);
 
-            IncreaseArray(GetArray(10), 7);
+            //IncreaseArray(GetArray(10), 7);
+
+            RepeatedXinArray();
 
         }
 
@@ -233,6 +235,27 @@ namespace TrainingTask
             Console.WriteLine(string.Join(",", array2));
 
             return array;
+        }
+
+        public static void RepeatedXinArray()
+        {
+            int[,] array = new int[,] { { 9, 5, 3, 4, 6, 7, 8 }, { 6, 3, 1, 3, 2, 7, 3 } };
+            int counter = 0;
+
+            Console.WriteLine("Enter the X number:");
+            var xNumber = Int32.Parse(Console.ReadLine());
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    if (array[i, k] == xNumber)
+                    {
+                        counter++;
+                    }
+                }
+            }
+            Console.WriteLine($"The X number {xNumber} repeated {counter} times");
         }
     }
 }
