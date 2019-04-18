@@ -14,14 +14,16 @@ namespace TrainingTask
 
             //InsertedText();
 
-            DeletedSpaceBetweenQuestionSymbols();
+            //DeletedSpaceBetweenQuestionSymbols();
+
+            DeletedExtraSpaces();
         }
 
         public static void UniqueSymbol()
         {
             string text = "123Привет123Привет";
             Console.WriteLine(text);
-            char symbol= '1';
+            char symbol = '1';
             int counterSymbol = 0;
 
             for (int i = 0; i < text.Length; i++)
@@ -49,8 +51,28 @@ namespace TrainingTask
             string text = "Be? ? Or no to be?";
             Console.WriteLine(text);
 
-            string trimText = text.Remove(3,1);
+            string trimText = text.Remove(3, 1);
             Console.WriteLine(trimText);
         }
-    } 
+
+        public static void DeletedExtraSpaces()
+        {
+            string text = "Be??  Or  no  to  be?";
+            Console.WriteLine(text);
+            string textWithoutSpaces = "";
+
+            //string[] textWithDeletedSpaces = text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            //Console.WriteLine(string.Join(" ", textWithDeletedSpaces));
+
+            string[] newTextWithDeletedSpaces = text.Split(new char[] { ' ' });
+            for (int i = 0; i < newTextWithDeletedSpaces.Length; i++)
+            {
+                if (newTextWithDeletedSpaces[i] != string.Empty)
+                {
+                    textWithoutSpaces += newTextWithDeletedSpaces[i] + " ";
+                }
+            }
+            Console.WriteLine(textWithoutSpaces);
+        }
+    }
 }
