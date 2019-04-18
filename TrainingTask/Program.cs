@@ -12,7 +12,9 @@ namespace TrainingTask
         {
             //UniqueSymbol();
 
-            InsertedText();
+            //InsertedText();
+
+            DeletedSpaceBetweenQuestionSymbols();
         }
 
         public static void UniqueSymbol()
@@ -40,6 +42,15 @@ namespace TrainingTask
             Console.WriteLine($"Before: {text1}");
             string resultText = text1.Insert(5, text2);
             Console.WriteLine($"After: {resultText}");
+        }
+
+        public static void DeletedSpaceBetweenQuestionSymbols()
+        {
+            string text = "Be? ? Or no to be?";
+            Console.WriteLine(text);
+
+            string trimText = text.Remove(3,1);
+            Console.WriteLine(trimText);
         }
     } 
 }
