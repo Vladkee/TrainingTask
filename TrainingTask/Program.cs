@@ -10,20 +10,36 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-            Console.Write("Add radius ");
-            string radiusString = Console.ReadLine();
+            //UniqueSymbol();
 
-            int.TryParse(radiusString, out int radius);
-        
-            Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
+            InsertedText();
         }
 
-        public static decimal PerformCalculation(int r)
+        public static void UniqueSymbol()
         {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
+            string text = "123Привет123Привет";
+            Console.WriteLine(text);
+            char symbol= '1';
+            int counterSymbol = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (text[i] == symbol)
+                {
+                    counterSymbol++;
+                }
+            }
+            Console.WriteLine($"The symbol {symbol} repeated {counterSymbol} times.");
         }
-    }
+
+        public static void InsertedText()
+        {
+            string text1 = "Main TEXT";
+            string text2 = "Pasted text ";
+
+            Console.WriteLine($"Before: {text1}");
+            string resultText = text1.Insert(5, text2);
+            Console.WriteLine($"After: {resultText}");
+        }
+    } 
 }
