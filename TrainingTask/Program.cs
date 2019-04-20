@@ -22,8 +22,9 @@ namespace TrainingTask
 
             //IncreaseArray(GetArray(10), 7);
 
-            RepeatedXinArray();
+            //RepeatedXinArray();
 
+            SwapLinesInArray();
         }
 
         public static void Array1()
@@ -256,6 +257,40 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine($"The X number {xNumber} repeated {counter} times");
+        }
+
+        public static void SwapLinesInArray()
+        {
+            int[,] array = new int[,] { { 9, 5, 3, 4, 6, 7, 8 }, { 6, 3, 1, 3, 2, 7, 3 } };
+
+            Console.WriteLine("Before array looks like: ");
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    Console.Write(array[i, k] + " ");
+                }
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < array.GetLength(1); i++)
+            {
+                for (int k = 0, j = k + 1; k < array.GetLength(0); k++)
+                {
+                    int temp = array[k, i];
+                    array[k, i] = array[j, i];
+                    array[j, i] = temp;
+                }
+            }
+            Console.WriteLine("After array looks like: ");
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int k = 0; k < array.GetLength(1); k++)
+                {
+                    Console.Write(array[i, k] + " ");
+                }
+            }
+            Console.WriteLine();
         }
     }
 }
