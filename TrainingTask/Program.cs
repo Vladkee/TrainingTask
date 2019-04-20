@@ -13,6 +13,8 @@ namespace TrainingTask
             //Task1_Calculation.PerformCalculation();
 
             //Task2_Converting.ConvertingСurrency();
+
+            Task3_BankProgram.BodyProgram();
         }
     }
 }
