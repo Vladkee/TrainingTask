@@ -16,7 +16,9 @@ namespace TrainingTask
 
             //DeletedSpaceBetweenQuestionSymbols();
 
-            DeletedExtraSpaces();
+            //DeletedExtraSpaces();
+
+            ExactWordinText();
         }
 
         public static void UniqueSymbol()
@@ -73,6 +75,22 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine(textWithoutSpaces);
+        }
+
+        public static void ExactWordinText()
+        {
+            string text = "Be?? Or no to be?";
+            Console.WriteLine(text);
+            Console.Write("Enter the index: ");
+            var index = Int32.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            string[] arrayText = text.Split(' ');
+            Console.WriteLine($"The word with index {index} is \"{arrayText[index]}\".");
+            string word = arrayText[index];
+
+            string letter = word.Substring(0, 1);
+            Console.WriteLine($"The first symbol of \"{word}\" is \"{letter}\".");
         }
     }
 }
