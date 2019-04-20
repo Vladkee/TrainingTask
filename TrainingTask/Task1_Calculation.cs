@@ -10,12 +10,39 @@ namespace TrainingTask
     {
         public static void PerformCalculation()
         {
+            int firstNumber = GetFirstValue();
+            int secondNumber = GetSecondValue();
+            string sign = GetSignValue();
+            double result = CaseAnalise(sign, firstNumber, secondNumber);
+            ShowResult(result);
+        }
+
+        private static int GetFirstValue()
+        {
             Console.Write("Enter the firts number: ");
             var firstNumber = Int32.Parse(Console.ReadLine());
+
+            return firstNumber;
+        }
+
+        private static int GetSecondValue()
+        {
             Console.Write("Enter the second number: ");
             var secondNumber = Int32.Parse(Console.ReadLine());
+
+            return secondNumber;
+        }
+
+        private static string GetSignValue()
+        {
             Console.Write("Enter the type of calculation (+, -, *, /): ");
             var sign = Console.ReadLine();
+
+            return sign;
+        }
+
+        private static double CaseAnalise(string sign, int firstNumber, int secondNumber)
+        {
             double result = 0;
 
             switch (sign)
@@ -36,32 +63,37 @@ namespace TrainingTask
                     Console.WriteLine("You've entered wrong sign.");
                     break;
             }
-            Console.WriteLine($"Result = {result}");
+            return result;
+        }
+        
+        private static double Sum(int firstNumber, int secondNumber)
+        {
+            return firstNumber + secondNumber;
         }
 
-        private static double Sum(int a, int b)
+        private static double Sub(int firstNumber, int secondNumber)
         {
-            return a + b;
+            return firstNumber - secondNumber;
         }
 
-        private static double Sub(int a, int b)
+        private static double Mul(int firstNumber, int secondNumber)
         {
-            return a - b;
+            return firstNumber * secondNumber;
         }
 
-        private static double Mul(int a, int b)
+        private static double Div(int firstNumber, int secondNumber)
         {
-            return a * b;
-        }
-
-        private static double Div(int a, int b)
-        {
-            if (b == 0)
+            if (secondNumber == 0)
             {
                 Console.WriteLine("ERROR! You can't devide by 0.");
                 return 0;
             }
-            return a / b;
+            return firstNumber / secondNumber;
+        }
+
+        private static void ShowResult(double result)
+        {
+            Console.WriteLine($"The result of calculation is {result}");
         }
     }
 }

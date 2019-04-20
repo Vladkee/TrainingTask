@@ -12,7 +12,7 @@ namespace TrainingTask
         {
             //Task1_Calculation.PerformCalculation();
 
-            Task2_Converting.ConvertingСurrency();
+            //Task2_Converting.ConvertingСurrency();
         }
     }
 }
