@@ -13,7 +13,11 @@ namespace TrainingTask
 		{
 			//Task000111();
 
-			Products();
+			//Products();
+
+			//PerfectNumber();
+
+			EncryptionProgram();
 		}
 
 		public static void Task000111()
@@ -116,6 +120,57 @@ namespace TrainingTask
 
 				sumToBuy += prices[codeOfProduct-1] * amountOfProduct;
 			}
+		}
+
+		public static void PerfectNumber()
+		{
+			int sum = 0;
+
+			for (int i = 1; i <= 1000; i++)
+			{
+				for (int k = 1; k < i; k++)
+				{
+					if (i % k == 0)
+					{
+						sum += k;
+					}
+				}
+				if (sum == i)
+				{
+					Console.WriteLine(i);
+				}
+				sum = 0;
+			}
+		}
+
+		public static void EncryptionProgram()
+		{
+			var encryptChars = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+			var cipher = new char[11] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#', '$' };
+
+			Console.WriteLine("Enter a text to encrypt:");
+			var strTextBefore = Console.ReadLine();
+			var arrayTextAfter = new char[strTextBefore.Length];
+
+
+			for (int i = 0; i < strTextBefore.Length; i++)
+			{
+				for (int k = 0; k < encryptChars.Length; k++)
+				{
+					if (strTextBefore[i] == encryptChars[k])
+					{
+						arrayTextAfter[i] = cipher[k];
+						break;
+					}
+					else
+					{
+						arrayTextAfter[i] = cipher[10];
+;					}
+				}
+			}
+			Console.WriteLine();
+			Console.WriteLine($"The encrypted text will look like:");
+			Console.WriteLine(string.Join("", arrayTextAfter));
 		}
 	}
 }
