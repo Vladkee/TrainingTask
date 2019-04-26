@@ -12,7 +12,9 @@ namespace TrainingTask
 		{
 			//JadenCased();
 
-			PrinterProgram();
+			//PrinterProgram();
+
+			VowelsProgram();
 		}
 
 		public static void JadenCased()
@@ -56,7 +58,28 @@ namespace TrainingTask
 					}
 				}
 			}
-			Console.WriteLine($"The control result is {badCounter} 'bad' symbols // {goodCounter} 'good' symbols out of {badCounter+ goodCounter}.");
+			Console.WriteLine($"The control result is {badCounter} 'bad' symbols // {goodCounter} 'good' symbols out of {badCounter + goodCounter}.");
+		}
+
+		public static void VowelsProgram()
+		{
+			Console.WriteLine("Enter any letters:");
+			var text = Console.ReadLine().ToLower();
+			char[] vowels = { 'a', 'i', 'e', 'o', 'u' };
+			int vowelsCounter = 0;
+
+			for (int i = 0; i < text.Length; i++)
+			{
+				for (int k = 0; k < vowels.Length; k++)
+				{
+					if (text[i] == vowels[k])
+					{
+						vowelsCounter++;
+					}
+				}
+			}
+			Console.WriteLine();
+			Console.WriteLine($"The text '{text}' has {vowelsCounter} vowels.");
 		}
 	}
 }
