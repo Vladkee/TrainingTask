@@ -6,24 +6,29 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World");
-            Console.Write("Add radius ");
-            string radiusString = Console.ReadLine();
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			JadenCased();
+		}
 
-            int.TryParse(radiusString, out int radius);
-        
-            Console.WriteLine($"The square of the round is {Program.PerformCalculation(radius)}");
-        }
+		public static void JadenCased()
+		{
+			string nonJadeCase = "How can mirrors be real if our eyes aren't real?";
+			Console.WriteLine("Before: ");
+			Console.WriteLine(nonJadeCase);
+			string[] splitedText = nonJadeCase.Split();
+			string JadeCase = "";
 
-        public static decimal PerformCalculation(int r)
-        {
-            const decimal Pi = 3.14m;
-            decimal square = Pi * r * r;
-            return square;
-        }
-    }
+
+			for (int i = 0; i < splitedText.Length; i++)
+			{
+				string wordWithUpperLetter = splitedText[i].Substring(0, 1).ToUpper() + splitedText[i].Substring(1);
+				JadeCase += wordWithUpperLetter + " ";
+			}
+			Console.WriteLine("After:");
+			Console.WriteLine(JadeCase);
+		}
+	}
 }
