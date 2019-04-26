@@ -56,7 +56,7 @@ namespace TrainingTask
 					}
 				}
 			}
-			Console.WriteLine($"The control result is {badCounter} // {goodCounter}");
+			Console.WriteLine($"The control result is {badCounter} 'bad' symbols // {goodCounter} 'good' symbols out of {badCounter+ goodCounter}.");
 		}
 	}
 }
