@@ -10,7 +10,9 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			JadenCased();
+			//JadenCased();
+
+			PrinterProgram();
 		}
 
 		public static void JadenCased()
@@ -29,6 +31,32 @@ namespace TrainingTask
 			}
 			Console.WriteLine("After:");
 			Console.WriteLine(JadeCase);
+		}
+
+		public static void PrinterProgram()
+		{
+			Console.WriteLine("Enter control text (any letters):");
+			var controlLetters = Console.ReadLine().ToLower();
+			char[] goodControlString = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'j', 'i', 'j', 'k', 'l', 'm' };
+			char[] badControlString = { 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+			int goodCounter = 0;
+			int badCounter = 0;
+
+			for (int i = 0; i < controlLetters.Length; i++)
+			{
+				for (int k = 0, j = 0; k < goodControlString.Length & j < badControlString.Length; k++, j++)
+				{
+					if (controlLetters[i] == goodControlString[k])
+					{
+						goodCounter++;
+					}
+					else if (controlLetters[i] == badControlString[j])
+					{
+						badCounter++;
+					}
+				}
+			}
+			Console.WriteLine($"The control result is {badCounter} // {goodCounter}");
 		}
 	}
 }
