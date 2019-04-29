@@ -18,8 +18,11 @@ namespace TrainingTask
 
             //DeletedExtraSpaces();
 
-            ExactWordinText();
-        }
+            //ExactWordinText();
+
+			SwappedText();
+
+		}
 
         public static void UniqueSymbol()
         {
@@ -92,5 +95,25 @@ namespace TrainingTask
             string letter = word.Substring(0, 1);
             Console.WriteLine($"The first symbol of \"{word}\" is \"{letter}\".");
         }
-    }
+
+		public static void SwappedText()
+		{
+			Console.WriteLine("Enter some text:");
+			var someText = Console.ReadLine();
+
+			string[] arrayOfSomeText = someText.Split(' ');
+			int arrayLenght = arrayOfSomeText.Length;
+			string temp = string.Empty;
+
+			for (int i = 0, j = arrayLenght - 1; i < j & j < arrayLenght; i++, j--)
+			{
+				temp = arrayOfSomeText[i];
+				arrayOfSomeText[i] = arrayOfSomeText[j];
+				arrayOfSomeText[j] = temp;
+			}
+			Console.WriteLine("Swapped text looks like:");
+			Console.WriteLine(string.Join(" ", arrayOfSomeText));
+		}
+
+	}
 }
