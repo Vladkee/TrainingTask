@@ -14,7 +14,7 @@ namespace TrainingTask
 
             //Task2_Converting.ConvertingСurrency();
 
-            Task3_BankProgram.BodyProgram();
+            //Task3_BankProgram.BodyProgram();
         }
     }
 }

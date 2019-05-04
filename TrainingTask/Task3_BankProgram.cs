@@ -73,5 +73,10 @@ namespace TrainingTask
             else
                 Console.WriteLine("No debt left.");
         }
+
+		private static void CheckATMPinCode()
+		{
+
+		}
     }
 }
