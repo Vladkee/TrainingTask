@@ -49,6 +49,7 @@
     <Compile Include="Task1_Calculation.cs" />
     <Compile Include="Task2_Converting.cs" />
     <Compile Include="Task3_BankProgram.cs" />
+    <Compile Include="Task6_SortString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

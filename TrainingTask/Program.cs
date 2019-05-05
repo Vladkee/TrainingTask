@@ -16,7 +16,9 @@ namespace TrainingTask
 
 			//Task3_BankProgram.BodyProgram();
 
-			Task4_AtmPinCodeVerification.Execute();
+			//Task4_AtmPinCodeVerification.Execute();
+
+			Task6_SortString.Execute();
 
 		}
     }
