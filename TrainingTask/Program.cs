@@ -10,11 +10,14 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            //Task1_Calculation.PerformCalculation();
+			//Task1_Calculation.PerformCalculation();
 
-            //Task2_Converting.ConvertingСurrency();
+			//Task2_Converting.ConvertingСurrency();
 
-            //Task3_BankProgram.BodyProgram();
-        }
+			//Task3_BankProgram.BodyProgram();
+
+			Task4_AtmPinCodeVerification.Execute();
+
+		}
     }
 }
