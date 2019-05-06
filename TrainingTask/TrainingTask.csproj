@@ -50,6 +50,7 @@
     <Compile Include="Task2_Converting.cs" />
     <Compile Include="Task3_BankProgram.cs" />
     <Compile Include="Task6_SortString.cs" />
+    <Compile Include="Task7_SortStringToCamelCase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -18,7 +18,9 @@ namespace TrainingTask
 
 			//Task4_AtmPinCodeVerification.Execute();
 
-			Task6_SortString.Execute();
+			//Task6_SortString.Execute();
+
+			Task7_SortStringToCamelCase.Execute();
 
 		}
     }
