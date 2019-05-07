@@ -10,7 +10,18 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
-        }
+			//Task1_Calculation.PerformCalculation();
+
+			//Task2_Converting.ConvertingСurrency();
+
+			//Task3_BankProgram.BodyProgram();
+
+			//Task4_AtmPinCodeVerification.Execute();
+
+			//Task6_SortString.Execute();
+
+			Task7_SortStringToCamelCase.Execute();
+
+		}
     }
 }
