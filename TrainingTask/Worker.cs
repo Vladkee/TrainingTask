@@ -8,15 +8,16 @@ namespace TrainingTask
 {
 	class Worker
 	{
-		public string name;
-		public int age;
-		public decimal salary;
+		public string Name { get; set; }
+		public int Age { get; set; }
+		public decimal Salary { get; set; }
 
 		public Worker(string name, int age, decimal salary)
 		{
-			this.name = name;
-			this.age = age;
-			this.salary = salary;
+			Name = name;
+			Age = age;
+			Salary = salary;
 		}
+		
 	}
 }
