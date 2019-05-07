@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class User
+	class Worker : User
 	{
-		public string Name { get; set; }
-		public int Age { get; set; }
+		public decimal Salary { get; set; }
 
-		public User(string name, int age)
+
+		public Worker(string name, int age, decimal salary)
+			: base(name, age)
 		{
+			Salary = salary;
 			Name = name;
 			Age = age;
 		}

@@ -10,7 +10,8 @@ namespace TrainingTask
     {
 		static void Main(string[] args)
 		{
-			Task1.Execute.GetSalaryAndAge();
+			//Task1.Execute.GetSalaryAndAge();
+			Task2.Execute.GetSalaryAndAge();
 		}
     }
 }
