@@ -13,7 +13,9 @@ namespace TrainingTask
         {
 			//new TrainScheduler().Execute(); 
 
-			new HandlerTask2().Execute();
+			//new HandlerTask2().Execute();
+
+			Task3.ColorAsker.Execute();
         }
 
 	}
