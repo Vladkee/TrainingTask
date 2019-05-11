@@ -30,8 +30,8 @@ namespace TrainingTask.Task2
 			Console.WriteLine($"The scholarship of {student1.Name} is {student1.Scholarship}. He's {student1.Course} year student.");
 			Console.WriteLine($"The scholarship of {student2.Name} is {student2.Scholarship}. He's {student2.Course} year student.");
 
-			Console.WriteLine($"The driver {driver1.Name} has '{Driver.GetDriverLicence(DriverLicenceCategories.A)}' category and {Driver.GetDriverExperience(2.5)} years of driver experience.");
-			Console.WriteLine($"The driver {driver2.Name} has '{Driver.GetDriverLicence(DriverLicenceCategories.C)}' category and {Driver.GetDriverExperience(5)} years of driver experience.");
+			Console.WriteLine($"The driver {driver1.Name} has '{driver1.DriverLicence}' category and {driver1.DriverExperience} years of driver experience.");
+			Console.WriteLine($"The driver {driver2.Name} has '{driver2.DriverLicence}' category and {driver2.DriverExperience} years of driver experience.");
 		}
 
 	}

@@ -11,6 +11,8 @@ namespace TrainingTask.Task2
 		private double driverExperience;
 		private DriverLicenceCategories driverLicence;
 
+
+
 		public Driver(double driverExperience, DriverLicenceCategories driverLicence, string name, int age, decimal salary)
 			: base(name, age, salary)
 		{
@@ -21,14 +23,28 @@ namespace TrainingTask.Task2
 			Salary = salary;
 		}
 
-		public static double GetDriverExperience(double driverExperience)
+		public double DriverExperience
 		{
-			return driverExperience;
+			get
+			{
+				return driverExperience;
+			}
+			set
+			{
+				driverExperience = value;
+			}
 		}
 
-		public static DriverLicenceCategories GetDriverLicence(DriverLicenceCategories driverLicence)
+		public DriverLicenceCategories DriverLicence
 		{
-			return driverLicence;
+			get
+			{
+				return driverLicence;
+			}
+			set
+			{
+				driverLicence = value;
+			}
 		}
 	}
 
