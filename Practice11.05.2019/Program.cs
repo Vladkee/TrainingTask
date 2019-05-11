@@ -7,7 +7,11 @@ namespace Practice11._05._2019
 	{
 		static void Main(string[] args)
 		{
-			Task1.FigureDrawing.Execute();
+			//Task1.FigureDrawing.Execute();
+
+			Task2.GrowingPlants.Execute();
+
+			
 		}
 	}
 }

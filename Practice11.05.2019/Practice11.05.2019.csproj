@@ -6,8 +6,4 @@
     <RootNamespace>Practice11._05._2019</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="Task2\" />
-  </ItemGroup>
-
 </Project>
