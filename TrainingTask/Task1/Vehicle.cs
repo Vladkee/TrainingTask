@@ -55,5 +55,14 @@ namespace TrainingTask.Task1
 			Console.ForegroundColor = Color;
 			Console.WriteLine($"{GetType().Name} has moved {meters} meters");
 		}
+
+		public void DisplayAliases()
+		{
+			Console.WriteLine(string.Format("{0,5} {1, 12} {2,13} {3,18} {4,20}", "VehicleType", "WheelCount", "Color", "MaxSpeed", "PassengerCount"));
+		}
+		public void DisplayTable()
+		{
+			Console.WriteLine(string.Format("{0,5} {1,12} {2,15} {3,18} {4,20}", GetType().Name, this.wheelCount, Console.ForegroundColor = this.Color, this.MaxSpeed, this.PassengerCount));
+		}
 	}
 }
