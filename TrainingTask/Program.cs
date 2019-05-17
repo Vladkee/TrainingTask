@@ -15,7 +15,11 @@ namespace TrainingTask
 
 			//new HandlerTask2().Execute();
 
-			Task3.ColorAsker.Execute();
+			//Task3.ColorAsker.Execute();
+
+			Task4.SchoolClass.Execute();
+
+
         }
 
 	}
