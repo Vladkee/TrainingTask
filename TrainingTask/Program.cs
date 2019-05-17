@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrainingTask.Task2;
 
 namespace TrainingTask
 {
@@ -10,7 +11,16 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World");
+			//new TrainScheduler().Execute(); 
+
+			//new HandlerTask2().Execute();
+
+			//Task3.ColorAsker.Execute();
+
+			Task4.SchoolClass.Execute();
+
+
         }
-    }
+
+	}
 }
