@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Practice11._05._2019.Figures
+namespace Practice18._05._2019.Figures
 {
 	public class Circle : Figure
 	{
@@ -15,7 +15,7 @@ namespace Practice11._05._2019.Figures
 			CenterCoordinates = centerCoordinates;
 		}
 
-		public void Draw()
+		public override void Draw()
 		{
 			Console.WriteLine($"Circle with radius {this.CircleRadius}m has {CenterCoordinates} center coordinates");
 		}

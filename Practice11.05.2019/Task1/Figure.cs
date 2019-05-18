@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Practice11._05._2019
+namespace Practice18._05._2019
 {
-	public class Figure
+	public abstract class Figure
 	{
 		public double CenterCoordinates { get; set; }
 
@@ -12,5 +12,8 @@ namespace Practice11._05._2019
 		{
 			this.CenterCoordinates = centerCoordinates;
 		}
+
+		public abstract void Draw();
+
 	}
 }

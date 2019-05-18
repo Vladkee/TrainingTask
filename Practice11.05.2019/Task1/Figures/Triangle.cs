@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Practice11._05._2019.Figures
+namespace Practice18._05._2019.Figures
 {
 	class Triangle : Figure
 	{
@@ -21,9 +21,9 @@ namespace Practice11._05._2019.Figures
 			CenterCoordinates = centerCoordinates;
 		}
 
-		public void Draw()
+		public override void Draw()
 		{
-			Console.WriteLine($"Triangle with sides A = {this.SideA}m, B = {this.SideB}, C = {this.SideC} has {CenterCoordinates} center coordinates");
+			Console.WriteLine($"Triangle with sides A = {this.SideA}m, B = {this.SideB}m, C = {this.SideC}m has {CenterCoordinates} center coordinates");
 		}
 	}
 }
