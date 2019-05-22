@@ -8,24 +8,21 @@ namespace Practice11._05._2019.Task2
 	{
 		public static void Execute()
 		{
-			Plant[] plants =
+			Worker[] workers =
 			{
-				new Tree (20, Enums.TreesEnum.Birch,200,ConsoleColor.DarkGreen),
-				new Tree (10, Enums.TreesEnum.Maple,500,ConsoleColor.DarkCyan),
-				new Tree (15, Enums.TreesEnum.Сhestnut, 600, ConsoleColor.DarkMagenta),
-				new Flower (5, Enums.FlowersEnum.Pion, 20, ConsoleColor.White),
-				new Flower (3, Enums.FlowersEnum.Tulip, 15, ConsoleColor.Red),
-				new Flower (4, Enums.FlowersEnum.Rose, 30, ConsoleColor.DarkRed)
+				new Worker ("John"),
+				new Worker ("Vlad"),
+				new Worker ("Dima"),
 			};
 
 			var random = new Random();
-			foreach (var item in plants)
+			foreach (var item in workers)
 			{
 				var water = random.Next(0, 100);
-				item.WaterConsume(water);
+				item.WaterPlants(water);
 
 				var minerals = random.Next(0, 100);
-				item.MineralConsume(minerals);
+				item.MineralFertilize(minerals);
 
 				item.OxygenRealease(water, minerals);
 			}

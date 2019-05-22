@@ -14,7 +14,6 @@ namespace Practice11._05._2019.Task2
 		{
 			this.AmountOfFruits = amountOfFruits;
 			this.Kind = kind;
-
 			Height = height;
 			Color = color;
 		}
