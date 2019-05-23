@@ -21,6 +21,17 @@ namespace Practice11._05._2019.Task5
 			foreach (var item in arrAnimal)
 			{
 				item.Bite();
+
+				//if (item is IPurr)
+				//{
+				//	((IPurr)item).Purr();
+				//}
+
+				if (item as IPurr != null)
+				{
+					((IPurr)item).Purr();
+				}
+
 			}
 
 		}
