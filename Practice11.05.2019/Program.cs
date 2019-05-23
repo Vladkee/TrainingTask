@@ -1,4 +1,5 @@
 ﻿using Practice11._05._2019.Figures;
+using Practice11._05._2019.Task2;
 using System;
 
 namespace Practice11._05._2019
@@ -9,9 +10,10 @@ namespace Practice11._05._2019
 		{
 			//Task1.FigureDrawing.Execute();
 
-			Task2.GrowingPlants.Execute();
+			//Task2.GrowingPlants.Execute();
 
-			
+			new Galary(PlantList.GetPlantList(), new Worker()).Manage();
+
 		}
 	}
 }

@@ -6,46 +6,19 @@ namespace Practice11._05._2019.Task2
 {
 	class Worker
 	{
-		public string Name { get; set; }
-
-		public Worker(string name)
+		public void GrowPlant(Plant plant)
 		{
-			this.Name = name;
-		}
+			var random = new Random();
 
-		public void WaterPlants(double water)
-		{
-			if (water > 0 && water <= 10)
-			{
-				Console.WriteLine($"The {GetType().Name} was watered with {water} L of water. It will grpow on {this.Height++}cm in height.");
-			}
-			else if (water > 10 && water <= 50)
-			{
-				Console.WriteLine($"The {GetType().Name} was watered with {water} L of water. It will be {this.Height + 5}cm in height.");
-			}
-			else if (water > 50)
-			{
-				Console.WriteLine($"The {GetType().Name} was watered with {water} L of water. It will be {this.Height + 10}cm in height.");
-			}
-		}
+			var water = random.Next(0, 100);
+			var minerals = random.Next(0, 100);
 
-		public void MineralFertilize(double minerals)
-		{
-			if (minerals > 0 && minerals <= 10)
-			{
-				Console.WriteLine($"The {GetType().Name} was fertilized with {minerals} g minerals. It will be {Console.ForegroundColor = this.Color++} color.");
-				Console.ResetColor();
-			}
-			else if (minerals > 10 && minerals <= 50)
-			{
-				Console.WriteLine($"The {GetType().Name} was fertilized with {minerals} g minerals. It will be {Console.ForegroundColor = this.Color++} color.");
-				Console.ResetColor();
-			}
-			else if (minerals > 50)
-			{
-				Console.WriteLine($"The {GetType().Name} was fertilized with {minerals} g minerals. It will be {Console.ForegroundColor = this.Color++} color.");
-				Console.ResetColor();
-			}
+			plant.WaterConsume(water);
+
+			plant.MineralConsume(minerals);
+
+			plant.OxygenRealease(water, minerals);
+
 		}
 	}
 }

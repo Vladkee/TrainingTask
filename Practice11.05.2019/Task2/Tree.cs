@@ -17,5 +17,7 @@ namespace Practice11._05._2019.Task2
 			Height = height;
 			Color = color;
 		}
+
+
 	}
 }
