@@ -14,9 +14,9 @@ namespace Practice18._05._2019
 
 			//new Greeting().Execute();
 
-			//new CalculationOption().Execute();
+			new CalculationOption().Execute();
 
-			new AnimalProcess().AnimalAction();
+			//new AnimalProcess().AnimalAction();
 		}
 	}
 }
