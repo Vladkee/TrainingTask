@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TrainingTask.Task1;
+using TrainingTask.Task2;
 
 namespace TrainingTask
 {
@@ -10,6 +12,8 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
+			//new FoldersInfo().ShowFolderInfo();
+			new FileCreation().CreateTextFile();
 		}
 	}
 }
