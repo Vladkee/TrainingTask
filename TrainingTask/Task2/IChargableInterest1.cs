@@ -8,7 +8,7 @@ namespace TrainingTask.Task2
 {
 	interface IChargableInterest1
 	{
-		decimal Interest { get; set; }
+		double ChooseRate();
 
 		void ChargeInterest();
 	}

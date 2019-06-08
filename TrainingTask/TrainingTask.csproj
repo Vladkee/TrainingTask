@@ -49,12 +49,14 @@
     <Compile Include="Task1\Execute.cs" />
     <Compile Include="Task1\ISwitchable.cs" />
     <Compile Include="Task1\Television.cs" />
+    <Compile Include="Task2\Worker.cs" />
     <Compile Include="Task2\BankAccount.cs" />
     <Compile Include="Task2\CardAccount4.cs" />
     <Compile Include="Task2\CurrentAccount3.cs" />
     <Compile Include="Task2\DepositAccount2.cs" />
     <Compile Include="Task2\IChargableInterest1.cs" />
     <Compile Include="Task2\IOperableAccount2.cs" />
+    <Compile Include="Task2\Management.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

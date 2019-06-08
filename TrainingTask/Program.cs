@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingTask.Task1;
+using TrainingTask.Task2;
 
 namespace TrainingTask
 {
@@ -13,6 +14,7 @@ namespace TrainingTask
 		{
 			//new Execute().Manage();
 
+			new Management().Execute();
 
 		}
 	}

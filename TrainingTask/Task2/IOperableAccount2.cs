@@ -8,8 +8,8 @@ namespace TrainingTask.Task2
 {
 	interface IOperableAccount2
 	{
-		void DepositMoney(decimal payment);
+		void DepositMoney();
 
-		void GetMoney(decimal funds);
+		void GetMoney();
 	}
 }

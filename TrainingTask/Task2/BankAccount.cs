@@ -12,29 +12,44 @@ namespace TrainingTask.Task2
 
 		private string owner;
 
-		public BankAccount (decimal balance, string owner)
+		public int AccountNumber { get; set; }
+
+		public decimal Balance
 		{
-			this.balance = balance;
-			this.owner = owner;
+			get { return balance; }
+			set { balance = value; }
+		}
+
+		public string Owner
+		{
+			get { return owner; }
+			set { owner = value; }
+		}
+
+		public BankAccount (decimal balance, string owner, int accountNumber)
+		{
+			this.Balance = balance;
+			this.Owner = owner;
+			this.AccountNumber = accountNumber;
 		}
 
 		public decimal GetCurrentBalance()
 		{
-			return this.balance;
+			return this.Balance;
 		}
 
 		public string GetAccountOwner()
 		{
-			return this.owner;
+			return this.Owner;
 		}
 
 		public decimal CloseAccount()
 		{
-			decimal temp = this.balance;
+			decimal temp = this.Balance;
 			Console.WriteLine($"Account owner gets {temp}$");
 			this.balance = 0.00m;
 
-			return this.balance;
+			return this.Balance;
 		}
 	}
 }
