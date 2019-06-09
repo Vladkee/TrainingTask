@@ -76,7 +76,7 @@ namespace TrainingTask.Task2
 			foreach (var item in listOfAccounts)
 			{
 				Console.WriteLine($"Account number is: {item.AccountNumber}");
-				Console.WriteLine($"Accout type is: {item.GetType()}");
+				Console.WriteLine($"Accout type is: {item.GetType().Name}");
 				Console.WriteLine($"Account owner is: {item.Owner}");
 				Console.WriteLine($"Account balance is: {item.Balance}");
 				Console.WriteLine(string.Empty);
@@ -89,6 +89,7 @@ namespace TrainingTask.Task2
 			string decision = Console.ReadLine();
 			Int32.TryParse(decision, out int accNumber);
 
+			Console.Clear();
 			Console.WriteLine($"Ok. Lets see that we can do with account number {accNumber}.");
 
 			return accNumber;

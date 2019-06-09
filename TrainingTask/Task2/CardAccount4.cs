@@ -48,8 +48,9 @@ namespace TrainingTask.Task2
 		public void ChargeInterest()
 		{
 			decimal accrual = (decimal)this.Rate * this.Balance;
+			this.Balance += accrual;
 
-			Console.WriteLine($"You will get {accrual}$ to addition to you current balance {this.Balance}$.");
+			Console.WriteLine($"You will get {accrual}$ to addition to you current balance.");
 		}
 
 		public void GetMoney()
