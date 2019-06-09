@@ -61,7 +61,6 @@ namespace TrainingTask.Task2
 			{
 				throw new Exception("You chose wrong option. Try again.");
 			}
-
 			return this.Rate;
 		}
 
