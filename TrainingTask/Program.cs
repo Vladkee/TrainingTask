@@ -14,8 +14,9 @@ namespace TrainingTask
 		{
 			//new Execute().Manage();
 
-			new Management().Execute();
+			//new Management().Execute();
 
+			
 		}
 	}
 }

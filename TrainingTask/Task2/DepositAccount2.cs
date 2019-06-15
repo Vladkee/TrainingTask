@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class DepositAccount2 : BankAccount, IChargableInterest1
+	class DepositAccount2 : BankAccount, IInterestCountable
 	{
 		public double Rate { get; set; }
 		

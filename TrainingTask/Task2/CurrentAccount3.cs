@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class CurrentAccount3 : BankAccount, IOperableAccount2
+	class CurrentAccount3 : BankAccount, IBalanceAccessible
 	{
 		public CurrentAccount3(decimal balance, string owner, int accountNumber) 
 			: base(balance, owner, accountNumber)

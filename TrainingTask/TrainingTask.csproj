@@ -54,8 +54,8 @@
     <Compile Include="Task2\CardAccount4.cs" />
     <Compile Include="Task2\CurrentAccount3.cs" />
     <Compile Include="Task2\DepositAccount2.cs" />
-    <Compile Include="Task2\IChargableInterest1.cs" />
-    <Compile Include="Task2\IOperableAccount2.cs" />
+    <Compile Include="Task2\IInterestCountable.cs" />
+    <Compile Include="Task2\IBalanceAccessible.cs" />
     <Compile Include="Task2\Management.cs" />
   </ItemGroup>
   <ItemGroup>

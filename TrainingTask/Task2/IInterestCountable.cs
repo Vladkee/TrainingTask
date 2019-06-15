@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	interface IChargableInterest1
+	interface IInterestCountable
 	{
 		double ChooseRate();
 
