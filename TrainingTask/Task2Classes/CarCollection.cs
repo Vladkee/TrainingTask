@@ -6,15 +6,8 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Program
+	public class CarCollection<T> : MyList<T> where T : ICar
 	{
-		static void Main(string[] args)
-		{
-			//new DateTimePractise().DoSomething();
-
-			//new ArrayList().Execute();
-
-
-		}
+		
 	}
 }

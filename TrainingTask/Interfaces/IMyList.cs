@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Program
+	public interface IMyList<T>
 	{
-		static void Main(string[] args)
-		{
-			//new DateTimePractise().DoSomething();
+		void Add(T a);
 
-			//new ArrayList().Execute();
+		T this [int index] { get; }
 
+		int Count { get;}
 
-		}
+		void Clear();
+
+		bool Contains(T item);
+
 	}
 }

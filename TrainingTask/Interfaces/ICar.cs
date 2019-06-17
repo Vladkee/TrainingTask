@@ -6,15 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Program
+	public interface ICar
 	{
-		static void Main(string[] args)
-		{
-			//new DateTimePractise().DoSomething();
+		string Name { get; set; }
 
-			//new ArrayList().Execute();
-
-
-		}
+		int Year { get; set; }
 	}
 }
