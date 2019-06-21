@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TrainingTask.Task1;
 using TrainingTask.Task2;
+using TrainingTask.Task3;
 
 namespace TrainingTask
 {
@@ -13,7 +14,10 @@ namespace TrainingTask
 		static void Main(string[] args)
 		{
 			//new FoldersInfo().ShowFolderInfo();
-			new FileCreation().CreateTextFile();
+
+			//new FileCreation().CreateTextFile();
+
+			new FileReader().FileReading();
 		}
 	}
 }

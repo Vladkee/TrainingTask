@@ -11,12 +11,17 @@ namespace TrainingTask.Task1
 	{
 		public void ShowFolderInfo()
 		{
+			var directotyPath = Path.GetFullPath("C:\\ForC#\\");
+			//var currentFolder = Path.GetDirectoryName(directotyPath);
+			//var currentFolder = new DirectoryInfo(directotyPath).Name;
+			//Console.WriteLine(currentFolder);
+			//string[] folderPath = currentFolder.Split('\\');
+			//Console.WriteLine(folderPath[folderPath.Length-1]);
 
-			var directotyPath = "C:\\Windows\\System32";
 			DirectoryInfo directInfo = new DirectoryInfo(directotyPath);
 			var size = 0;
 			var count = 0;
-
+			
 			foreach (var item in Directory.GetDirectories(directotyPath))
 			{
 				try
@@ -28,15 +33,17 @@ namespace TrainingTask.Task1
 						size += file.Length;
 					}
 				}
-				
-			catch (Exception)
-			{
-			}
-		}
-		Console.WriteLine($"You have {count} folders in {directotyPath}");
-				Console.WriteLine($"Size {size}");
-			
-		}
 
-}
+				catch (Exception)
+				{ }
+			}
+			Console.WriteLine($"You have {count} folders in {directotyPath}");
+			Console.WriteLine($"Size: {size} Kb");
+
+			//while (isFolderExists)
+			//{
+			//	ShowFolderInfo();
+			//}
+		}
+	}
 }
