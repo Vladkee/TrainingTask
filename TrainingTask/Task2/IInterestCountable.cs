@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	interface IOperableAccount2
+	public interface IInterestCountable
 	{
-		void DepositMoney();
+		double ChooseRate();
 
-		void GetMoney();
+		void ChargeInterest();
 	}
 }

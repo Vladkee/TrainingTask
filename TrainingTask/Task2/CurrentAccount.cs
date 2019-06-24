@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class CurrentAccount3 : BankAccount, IOperableAccount2
+	public class CurrentAccount : BankAccount, IBalanceAccessible
 	{
-		public CurrentAccount3(decimal balance, string owner, int accountNumber) 
+		public CurrentAccount(decimal balance, string owner, int accountNumber) 
 			: base(balance, owner, accountNumber)
-		{
-
-		}
+		{	}
 
 		public void GetMoney()
 		{

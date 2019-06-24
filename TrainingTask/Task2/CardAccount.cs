@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class CardAccount4 : BankAccount, IChargableInterest1, IOperableAccount2
+	public class CardAccount : BankAccount, IInterestCountable, IBalanceAccessible
 	{
 		public double Rate { get; set; }
 
-		public CardAccount4(decimal balance, string owner, int accountNumber)
+		public CardAccount(decimal balance, string owner, int accountNumber)
 			: base(balance, owner, accountNumber)
-		{
-			this.Rate = 0.00;
-		}
+		{	}
 
 		public double ChooseRate()
 		{
-			Console.WriteLine("Let's choose your deposit time and rate.");
-			Console.WriteLine("You have 3 option: #1 - 3 months (2%), #2 - 6 months (5%), #3 - 12 months (7%). (Use 1,2, or 3).");
-
 			string rateResult = Console.ReadLine();
 			if (rateResult == "1")
 			{
@@ -55,7 +50,6 @@ namespace TrainingTask.Task2
 
 		public void GetMoney()
 		{
-			Console.WriteLine("How much money would you like to get?");
 			string strFunds = Console.ReadLine();
 			decimal.TryParse(strFunds, out decimal funds);
 			this.Balance -= funds;
@@ -64,7 +58,6 @@ namespace TrainingTask.Task2
 
 		public void DepositMoney()
 		{
-			Console.WriteLine("How much money would you like to deposit?");
 			string strPayment = Console.ReadLine();
 			decimal.TryParse(strPayment, out decimal payment);
 			this.Balance += payment;
