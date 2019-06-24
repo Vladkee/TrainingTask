@@ -6,9 +6,21 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task1
 {
-	class Engine : ISwitchable
+	public class Engine : ISwitchable
 	{
-		public bool state = false;
+		private bool state = false;
+
+		public bool State
+		{
+			get
+			{
+				return State;
+			}
+			set
+			{
+				state = value;
+			}
+		}
 
 		public void TurnOn()
 		{
@@ -26,7 +38,6 @@ namespace TrainingTask.Task1
 		{
 			if (this.state)
 				return $"{GetType().Name} is on";
-
 			else
 				return $"{GetType().Name} is off";
 		}

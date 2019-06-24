@@ -47,7 +47,7 @@ namespace TrainingTask.Task2
 		{
 			decimal temp = this.Balance;
 			Console.WriteLine($"Account owner gets {temp}$");
-			this.balance = 0.00m;
+			this.Balance = 0.00m;
 
 			return this.Balance;
 		}

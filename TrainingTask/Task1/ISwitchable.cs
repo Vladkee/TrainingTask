@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task1
 {
-	interface ISwitchable
+	public interface ISwitchable
 	{
 		void TurnOn();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	interface IBalanceAccessible
+	public interface IBalanceAccessible
 	{
 		void DepositMoney();
 

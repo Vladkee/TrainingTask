@@ -6,21 +6,16 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class DepositAccount2 : BankAccount, IInterestCountable
+	class DepositAccount : BankAccount, IInterestCountable
 	{
 		public double Rate { get; set; }
 		
-		public DepositAccount2(decimal balance, string owner, int accountNumber) 
+		public DepositAccount(decimal balance, string owner, int accountNumber) 
 			: base(balance, owner, accountNumber)
-		{
-			this.Rate = 0.00;
-		}
+		{	}
 
 		public double ChooseRate()
 		{
-			Console.WriteLine("Let's choose your deposit time and rate.");
-			Console.WriteLine("You have 3 option: #1 - 3 months (2%), #2 - 6 months (5%), #3 - 12 months (7%). (Use 1,2, or 3).");
-
 			string rateResult = Console.ReadLine();
 			if (rateResult == "1")
 			{

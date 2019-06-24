@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task2
 {
-	class Worker
+	public class Worker
 	{
+		//private List<BankAccount> listOfAccounts;
+
+		//public List<BankAccount> ListOfAccounts
+		//{
+		//	get { return ListOfAccounts; }
+		//	set { listOfAccounts = value; }
+		//}
 		public static List<BankAccount> CreateAccount()
 		{
 			List<BankAccount> listOfAccounts = new List<BankAccount>();
 			int position = 0;
-
 
 			while (true)
 			{
@@ -30,7 +36,7 @@ namespace TrainingTask.Task2
 					string strDepositMoney = Console.ReadLine();
 					decimal.TryParse(strDepositMoney, out decimal depositMoney);
 
-					listOfAccounts.Add(new DepositAccount2(depositMoney, name, position));
+					listOfAccounts.Add(new DepositAccount(depositMoney, name, position));
 
 				}
 				else if (decisionType == "2")
@@ -43,7 +49,7 @@ namespace TrainingTask.Task2
 					string strDepositMoney = Console.ReadLine();
 					decimal.TryParse(strDepositMoney, out decimal depositMoney);
 
-					listOfAccounts.Add(new CardAccount4(depositMoney, name, position));
+					listOfAccounts.Add(new CardAccount(depositMoney, name, position));
 				}
 				else
 				{

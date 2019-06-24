@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task1
 {
-	class Execute
+	public class Management
 	{
 		public void Manage()
 		{
-			Engine eng = new Engine();
-			Television tv = new Television();
+			ISwitchable eng = new Engine();
+			ISwitchable tv = new Television();
 
 			Console.WriteLine(eng.ToString());
 			Console.WriteLine(tv.ToString());
