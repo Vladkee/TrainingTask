@@ -47,8 +47,8 @@
     <Compile Include="Task2Classes\CarCollection.cs" />
     <Compile Include="DateTimePractise\DateTimePractise.cs" />
     <Compile Include="Task1Classes\ArrayList.cs" />
-    <Compile Include="Interfaces\ICar.cs" />
-    <Compile Include="Interfaces\IMyList.cs" />
+    <Compile Include="Task2Classes\ICar.cs" />
+    <Compile Include="Task1Classes\IMyList.cs" />
     <Compile Include="Task1Classes\MyList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

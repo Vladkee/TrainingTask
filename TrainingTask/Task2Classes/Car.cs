@@ -11,5 +11,15 @@ namespace TrainingTask.Task2Classes
 		public string Name { get; set; }
 		public int Year { get; set; }
 
+		public Car(string name, int year)
+		{
+			this.Name = name;
+			this.Year = year;
+		}
+
+		public override string ToString()
+		{
+			return this.Name + " " + this.Year;
+		}
 	}
 }
