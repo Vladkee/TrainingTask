@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task1
 {
-	public class Management
+	public class CollectionManagement
 	{
 		public void Execute()
 		{

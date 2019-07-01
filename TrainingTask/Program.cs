@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingTask.Task1;
+using TrainingTask.Task2;
 
 namespace TrainingTask
 {
@@ -11,7 +12,9 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			new Management().Execute();
+			//new Management().Execute();
+
+			new DictionaryManagement().DictionaryExecute();
 		}
 	}
 }
