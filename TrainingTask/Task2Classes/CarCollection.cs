@@ -24,7 +24,7 @@ namespace TrainingTask
 			Console.WriteLine($"Number of elements: {carArray.Count}");
 			Console.WriteLine(string.Empty);
 
-			//Console.WriteLine(GetInfoAboutCar());
+			Console.WriteLine(GetInfoAboutCar());
 			Console.WriteLine(Environment.NewLine);
 
 			carArray.Clear();
@@ -49,15 +49,27 @@ namespace TrainingTask
 			}
 		}
 
-		//public bool GetInfoAboutCar()
-		//{
-		//	Console.WriteLine("What the car do you want to find? (enter a car name)");
-		//	var carNameToFind = Console.ReadLine();
-		//	Console.WriteLine(Environment.NewLine);
-		//	var keyCar = new Car(carNameToFind, 2000);
-		//	var isExists = carArray.Contains(keyCar);
+		public Car GetInfoAboutCar()
+		{
+			Console.WriteLine("What the car do you want to find? (enter a car name)");
+			var carNameToFind = Console.ReadLine();
+			Console.WriteLine(Environment.NewLine);
 
-		//	return isExists;
-		//}
+			Car keyCar = default;
+			for (int i = 0; i < carArray.Count; i++)
+			{
+				if (carArray[i].Name.Contains(carNameToFind))
+				{
+					Console.WriteLine("Yes, we have found such element in the list:");
+					keyCar = carArray[i];
+					return keyCar;
+				}
+			}
+			if (keyCar==default)
+			{
+				Console.WriteLine("Nothing was found");
+			}
+			return keyCar;
+		}
 	}
 }
