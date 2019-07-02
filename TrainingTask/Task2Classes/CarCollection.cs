@@ -9,18 +9,23 @@ namespace TrainingTask
 {
 	public class CarCollection<T> : MyList<T> where T : Car
 	{
-		MyList<Car> carArray = new MyList<Car>();
+		private MyList<Car> carArray = new MyList<Car>();
 		public void Management()
 		{
 			Console.WriteLine($"Elements: {carArray.ToString()}");
 			Console.WriteLine($"Number of elements: {carArray.Count}");
 			carArray.Add(new Car("Ford", 2000));
 			carArray.Add(new Car("VW", 2013));
+			carArray.Add(new Car("Honda", 2017));
+			carArray.Add(new Car("Mazda", 2010));
 			Console.WriteLine(string.Empty);
 
 			Console.WriteLine($"Elements: {carArray.ToString()}");
 			Console.WriteLine($"Number of elements: {carArray.Count}");
 			Console.WriteLine(string.Empty);
+
+			//Console.WriteLine(GetInfoAboutCar());
+			Console.WriteLine(Environment.NewLine);
 
 			carArray.Clear();
 			Console.WriteLine($"Elements: {carArray.ToString()}");
@@ -41,20 +46,18 @@ namespace TrainingTask
 					text.AppendLine(carArray[i].ToString());
 				}
 				return text.ToString();
-				//Console.WriteLine("Enter an index of element to see info");
-				//var strIndex = Console.ReadLine();
-				//if (Int32.TryParse(strIndex, out int index))
-				//{
-				//	if (index > 0 && index <= Count)
-				//	{
-				//		carArray[index].ToString();
-				//	}
-				//}
-				//else
-				//{
-				//	throw new Exception("Wrong option");
-				//}
 			}
 		}
+
+		//public bool GetInfoAboutCar()
+		//{
+		//	Console.WriteLine("What the car do you want to find? (enter a car name)");
+		//	var carNameToFind = Console.ReadLine();
+		//	Console.WriteLine(Environment.NewLine);
+		//	var keyCar = new Car(carNameToFind, 2000);
+		//	var isExists = carArray.Contains(keyCar);
+
+		//	return isExists;
+		//}
 	}
 }
