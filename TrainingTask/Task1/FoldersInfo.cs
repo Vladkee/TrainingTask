@@ -7,43 +7,53 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task1
 {
-	class FoldersInfo
+	public class FoldersInfo
 	{
-		public void ShowFolderInfo()
+		public DirectoryInfo ShowFolderInfo()
 		{
-			var directotyPath = Path.GetFullPath("C:\\ForC#\\");
-			//var currentFolder = Path.GetDirectoryName(directotyPath);
-			//var currentFolder = new DirectoryInfo(directotyPath).Name;
-			//Console.WriteLine(currentFolder);
-			//string[] folderPath = currentFolder.Split('\\');
-			//Console.WriteLine(folderPath[folderPath.Length-1]);
-
+			var directotyPath = @"C:\ForC#\";
 			DirectoryInfo directInfo = new DirectoryInfo(directotyPath);
-			var size = 0;
-			var count = 0;
-			
-			foreach (var item in Directory.GetDirectories(directotyPath))
-			{
-				try
-				{
-					count = directInfo.GetDirectories().Count();
+			int numberOfFolders = directInfo.GetDirectories().Length;
 
-					foreach (var file in Directory.GetFiles(item))
-					{
-						size += file.Length;
-					}
+			double size = 0;
+			size = GetDirectorySize(directInfo);
+
+			Console.WriteLine($"You have {numberOfFolders} folders.");
+
+			return directInfo;
+		}
+
+		public double GetDirectorySize(DirectoryInfo directoryPath)
+		{
+			double size = 0;
+			int counter = 0;
+
+			try
+			{
+				counter = directoryPath.GetDirectories().Length;
+
+				foreach (FileInfo file in directoryPath.GetFiles())
+				{
+					size += file.Length;
 				}
 
-				catch (Exception)
-				{ }
-			}
-			Console.WriteLine($"You have {count} folders in {directotyPath}");
-			Console.WriteLine($"Size: {size} Kb");
+				if (counter == 0)
+				{
+					return size;
+				}
 
-			//while (isFolderExists)
-			//{
-			//	ShowFolderInfo();
-			//}
+				foreach (var item in directoryPath.GetDirectories())
+				{
+					size += GetDirectorySize(item);
+				}
+			}
+
+			catch (Exception error)
+			{
+				Console.WriteLine(error.Message);
+			}
+
+			return size;
 		}
 	}
 }

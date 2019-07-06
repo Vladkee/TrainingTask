@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,12 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			//new FoldersInfo().ShowFolderInfo();
+			new FoldersInfo().ShowFolderInfo();
+			new FoldersInfo().GetDirectorySize(new DirectoryInfo(@"C:\ForC#\"));
 
 			//new FileCreation().CreateTextFile();
 
-			new FileReader().FileReading();
+			//new FileReader().FileReading();
 		}
 	}
 }
