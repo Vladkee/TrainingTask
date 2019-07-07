@@ -52,6 +52,9 @@
     <Compile Include="Task1Classes\MyList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task3SingleLinkedList\ManagementOfLinkedList.cs" />
+    <Compile Include="Task3SingleLinkedList\Node.cs" />
+    <Compile Include="Task3SingleLinkedList\SingleLinkedList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

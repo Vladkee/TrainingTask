@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TrainingTask.Task2Classes;
+using TrainingTask.Task3SingleLinkedList;
 
 namespace TrainingTask
 {
@@ -15,9 +16,9 @@ namespace TrainingTask
 
 			//new ArrayList().Execute();
 
-			new CarCollection<Car>().Management();
+			//new CarCollection<Car>().Management();
 
-
+			new ManagementOfLinkedList().Execute();
 		}
 	}
 }
