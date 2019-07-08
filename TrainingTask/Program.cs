@@ -14,11 +14,17 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
+practice08.06.2019.Path
 			new FoldersInfo().ShowFolderInfo();
 
 			//new FileCreation().CreateTextFile();
 
 			//new FileReader().FileReading();
+
+			//new Execute().Manage();
+
+			new Management().Execute();
+
 		}
 	}
 }
