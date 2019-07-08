@@ -7,41 +7,55 @@ using System.Threading.Tasks;
 
 namespace TrainingTask.Task3SingleLinkedList
 {
-	public class SingleLinkedList<T> : IEnumerable<T>
+	public class SingleLinkedList<T>
 	{
 		private Node<T> firstElement;
 		private Node<T> lastElement;
-		int count;
+		private int count;
 
 		public void Add(T element)
 		{
 			Node<T> node = new Node<T>(element);
 
-			if (firstElement == null)
+			if (this.firstElement == null)
 			{
-				firstElement = node;
+				this.firstElement = node;
 			}
 			else
 			{
-				lastElement.Next = node;
+				this.lastElement.Next = node;
 			}
-			lastElement = node;
-			count++;
+			this.lastElement = node;
+			this.count++;
 		}
 
-		public IEnumerator GetEnumerator()
+		public void Display(Node<T> node = null)
 		{
-			return new Node<T>(element);
+			var currentNode = node ?? this.firstElement;
+
+			Console.WriteLine(currentNode.Element.ToString());
+			if (currentNode.Next is null)
+				return;
+
+			this.Display(currentNode.Next);
 		}
 
-		IEnumerator<T> IEnumerable<T>.GetEnumerator()
+		public void Display2()
 		{
-			Node<T> current = firstElement;
-			while (current != null)
+			var currentNode = this.firstElement;
+			Console.WriteLine(currentNode.Element);
+
+			for (int i = 0; i < count - 1; i++)
 			{
-				yield return current.Element;
-				current = current.Next;
+				currentNode = currentNode.Next;
+				Console.WriteLine(currentNode.Element);
 			}
+			//node = this.firstElement
+			//Console.WriteLine(node.Element);
+			//node = this.firstElement.Next;
+			//Console.WriteLine(node.Element);
+			//node = this.lastElement;
+			//Console.WriteLine(node.Element);
 		}
 	}
 }

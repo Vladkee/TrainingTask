@@ -8,17 +8,15 @@ namespace TrainingTask.Task3SingleLinkedList
 {
 	public class ManagementOfLinkedList
 	{
-		SingleLinkedList<object> singleLinkedList = new SingleLinkedList<object>();
+		private SingleLinkedList<int> singleLinkedList = new SingleLinkedList<int>();
 		public void Execute()
 		{
-			singleLinkedList.Add(new Node<int>(1));
-			singleLinkedList.Add(new Node<int>(2));
-			singleLinkedList.Add(new Node<int>(3));
+			singleLinkedList.Add(1);
+			singleLinkedList.Add(2);
+			singleLinkedList.Add(3);
 
-			foreach (var item in singleLinkedList)
-			{
-				Console.WriteLine(item);
-			}
+			singleLinkedList.Display();
+			singleLinkedList.Display2();
 		}
 	}
 }
