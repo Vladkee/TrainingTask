@@ -45,6 +45,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    practice08.06.2019.Path
+    <Compile Include="Task1\FoldersInfo.cs" />
+    <Compile Include="Task2\FileCreation.cs" />
+    <Compile Include="Task3\FileReader.cs" />
+
     <Compile Include="Task1\Engine.cs" />
     <Compile Include="Task1\Execute.cs" />
     <Compile Include="Task1\ISwitchable.cs" />
@@ -57,9 +62,11 @@
     <Compile Include="Task2\IChargableInterest1.cs" />
     <Compile Include="Task2\IOperableAccount2.cs" />
     <Compile Include="Task2\Management.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
