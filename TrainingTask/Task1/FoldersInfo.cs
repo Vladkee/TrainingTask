@@ -11,7 +11,7 @@ namespace TrainingTask.Task1
 	{
 		public DirectoryInfo ShowFolderInfo()
 		{
-			var directotyPath = @"C:\ForC#\";
+			var directotyPath = @"C:\Windows\System32\";
 			DirectoryInfo directInfo = new DirectoryInfo(directotyPath);
 			int numberOfFolders = directInfo.GetDirectories().Length;
 
@@ -19,6 +19,7 @@ namespace TrainingTask.Task1
 			size = GetDirectorySize(directInfo);
 
 			Console.WriteLine($"You have {numberOfFolders} folders.");
+			Console.WriteLine($"Size of all files in this folder is {size}");
 
 			return directInfo;
 		}
@@ -52,7 +53,6 @@ namespace TrainingTask.Task1
 			{
 				Console.WriteLine(error.Message);
 			}
-
 			return size;
 		}
 	}

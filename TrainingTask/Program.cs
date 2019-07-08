@@ -15,7 +15,6 @@ namespace TrainingTask
 		static void Main(string[] args)
 		{
 			new FoldersInfo().ShowFolderInfo();
-			new FoldersInfo().GetDirectorySize(new DirectoryInfo(@"C:\ForC#\"));
 
 			//new FileCreation().CreateTextFile();
 
