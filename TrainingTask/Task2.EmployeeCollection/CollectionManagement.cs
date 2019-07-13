@@ -55,16 +55,72 @@ namespace TrainingTask.Task2.EmployeeCollection
 			var sortedEmployeesWomenNameWithO = employees.Where(employee => employee.Gender == "F" 
 																		 && employee.LastName.StartsWith("O") 
 																		 && employee.Age > 20);
-			Console.WriteLine("Sorted employees with a last name");
+			Console.WriteLine("Sorted employees with a last name with \"O\"");
 			Display(sortedEmployeesWomenNameWithO);
 			Console.WriteLine(Environment.NewLine);
 			//
-			// Women, +20 age, last name with "O" sorting.
+			// Amount of employees of company.
+			//
+			//Case 1
+
+			var sortedEmployeesOfCompany = employees.GroupBy(employee => employee.Company)
+													.Select(employee => employee.Key + " - " + employee.Count() + " person(s) in the company.");
+			Console.WriteLine("Sorted employees of a company:");
+			foreach (var item in sortedEmployeesOfCompany)
+			{
+				Console.WriteLine(item);
+			}
+
+			//Case 2.
+
+			//var sortedEmployeesOfCompany = employees.GroupBy(employee => employee.Company);
+			//foreach (IGrouping<string, Employee> companies in sortedEmployeesOfCompany)
+			//{
+			//	int count = default;
+			//	foreach (var item in companies)
+			//	{
+			//		count++;
+			//	}
+			//	Console.WriteLine($"{count} persons in {companies.Key}");
+			//}
+			Console.WriteLine(Environment.NewLine);
+			//
+			// The first employee on the list.
 			//
 
-			var sortedEmployeesLastName = employees.OrderBy(employee => employee.LastName);
-			Console.WriteLine("Sorted employees with a last name");
-			Display(sortedEmployeesLastName);
+			var sortedEmployeesFirstEmployee = employees.First();
+			Console.WriteLine("The first employee on the list is:");
+			Console.WriteLine(sortedEmployeesFirstEmployee.ToString());
+			Console.WriteLine(Environment.NewLine);
+			//
+			// The last employee on the list.
+			//
+
+			var sortedEmployeesLastEmployee = employees.Last();
+			Console.WriteLine("The last employee on the list is:");
+			Console.WriteLine(sortedEmployeesLastEmployee.ToString());
+			Console.WriteLine(Environment.NewLine);
+			//
+			// The first employee with age > 25 on the list.
+			//
+
+			var sortedEmployeesLastEmployeeWithAge25 = employees.Where(employee => employee.Age > 25);
+			var sortedEmployee = sortedEmployeesLastEmployeeWithAge25.First();
+			Console.WriteLine("The first employee with age > 25 on the list is:");
+			Console.WriteLine(sortedEmployee.ToString());
+			Console.WriteLine(Environment.NewLine);
+			//
+			// "Oleg" employee.
+			//
+
+			var sortedEmployeesPupil = employees.Where(employee => employee.FirstName == "Oleg")
+												.Select(pupil => new Pupil(pupil.FirstName, pupil.LastName, "School 82"));
+												//.Select(pupil => new { FirstName = pupil.FirstName, LastName = pupil.LastName, School = "School 82" });
+			Console.WriteLine("Sorted employees with a first name 'Oleg' and new pupil");
+			foreach (var item in sortedEmployeesPupil)
+			{
+				Console.WriteLine(item);
+			}
 			Console.WriteLine(Environment.NewLine);
 		}
 
@@ -76,5 +132,6 @@ namespace TrainingTask.Task2.EmployeeCollection
 				Console.WriteLine("----------------------------------------");
 			}
 		}
+		
 	}
 }

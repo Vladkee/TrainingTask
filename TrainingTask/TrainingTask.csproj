@@ -49,6 +49,7 @@
     <Compile Include="Task1.DeferedInitialization\EmployeeGender.cs" />
     <Compile Include="Task2.EmployeeCollection\CollectionManagement.cs" />
     <Compile Include="Task2.EmployeeCollection\Employee.cs" />
+    <Compile Include="Task2.EmployeeCollection\Pupil.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

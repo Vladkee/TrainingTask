@@ -27,14 +27,22 @@ namespace TrainingTask.Task2.EmployeeCollection
 		{
 			return new List<Employee>
 			{
+				new Employee("Angel", "Vazovski", 20, "M", "Fabrica"),
 				new Employee("John", "Wick", 40, "M", "EASports"),
 				new Employee("Elena", "Poleno", 25, "F", "Fabrica"),
 				new Employee("Alex", "Huelo", 30, "M", "EASports"),
-				new Employee("Pavel", "Kosin", 35, "M", "Tatarkan"),
-				new Employee("Egor", "Tusin", 31, "M", "EASports"),
+				new Employee("Pavel", "Kosin", 35, "M", "Intetics"),
+				new Employee("Egor", "Tusin", 31, "M", "Talisman"),
 				new Employee("Natali", "Portman", 20, "F", "Talisman"),
-				new Employee("Marrie", "Pool", 60, "F", "GrandFact"),
+				new Employee("Marrie", "Pool", 60, "F", "Intetics"),
+				new Employee("Oleg", "Reshetilo", 27, "M", "Intetics"),
+				new Employee("Oksana", "Ononenko", 24, "F", "Intetics")
 			};
+		}
+
+		public override string ToString()
+		{
+			return this.FirstName +" "+ this.LastName + ", " + this.Age + ", " + this.Gender + ", " + this.Company;
 		}
 	}
 }
