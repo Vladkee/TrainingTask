@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TrainingTask.Task1.DeferedInitialization;
 using TrainingTask.Task2.EmployeeCollection;
+using TrainingTask.Task3.EmployeeSwapping;
 
 namespace TrainingTask
 {
@@ -14,7 +15,9 @@ namespace TrainingTask
 		{
 			//new DeferedAndUndereredExampleManagement().Execute();
 
-			new CollectionManagement().Execute();
+			//new CollectionManagement().Execute();
+
+			new Management().Execute();
 		}
 	}
 }
