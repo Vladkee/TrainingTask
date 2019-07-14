@@ -9,7 +9,6 @@ namespace TrainingTask.Task2
 {
 	public class StudentDictionary
 	{
-
 		private Dictionary<string, Student> studentDict = new Dictionary<string, Student>()
 		{
 			{ "Vlad Radchenko", new Student("Vlad", "Radchenko", 4, "G13", "GIS") },
