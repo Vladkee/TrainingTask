@@ -17,7 +17,9 @@ namespace TrainingTask
 
 			//PerfectNumber();
 
-			EncryptionProgram();
+			//EncryptionProgram();
+
+			DecryptionProgram();
 		}
 
 		public static void Task000111()
@@ -170,6 +172,37 @@ namespace TrainingTask
 			}
 			Console.WriteLine();
 			Console.WriteLine($"The encrypted text will look like:");
+			Console.WriteLine(string.Join("", arrayTextAfter));
+		}
+
+		public static void DecryptionProgram()
+		{
+			var encryptChars = new char[10] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#' };
+			var cipher = new char[11] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$' };
+			
+
+			Console.WriteLine("Enter a text to decrypt:");
+			var strTextBefore = Console.ReadLine();
+			var arrayTextAfter = new char[strTextBefore.Length];
+
+
+			for (int i = 0; i < strTextBefore.Length; i++)
+			{
+				for (int k = 0; k < encryptChars.Length; k++)
+				{
+					if (strTextBefore[i] == encryptChars[k])
+					{
+						arrayTextAfter[i] = cipher[k];
+						break;
+					}
+					else
+					{
+						arrayTextAfter[i] = cipher[10];
+					}
+				}
+			}
+			Console.WriteLine();
+			Console.WriteLine($"The decrypted text will look like:");
 			Console.WriteLine(string.Join("", arrayTextAfter));
 		}
 	}
