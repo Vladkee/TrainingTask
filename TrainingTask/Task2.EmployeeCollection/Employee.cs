@@ -42,7 +42,25 @@ namespace TrainingTask.Task2.EmployeeCollection
 
 		public override string ToString()
 		{
-			return this.FirstName +" "+ this.LastName + ", " + this.Age + ", " + this.Gender + ", " + this.Company;
+			return this.FirstName + " " + this.LastName + ", " + this.Age + ", " + this.Gender + ", " + this.Company;
+		}
+
+		public override bool Equals(Object obj)
+		{
+			if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+			{
+				return false;
+			}
+			else
+			{
+				Employee emp = (Employee)obj;
+				return (FirstName == emp.FirstName) && (LastName == emp.LastName) && (Age == emp.Age) && (Gender == emp.Gender) && (Company == emp.Company);
+			}
+		}
+
+		public override int GetHashCode()
+		{
+			return (2*5) ^ 2;
 		}
 	}
 }
