@@ -179,12 +179,10 @@ namespace TrainingTask
 		{
 			var encryptChars = new char[10] { ';', '+', '/', '.', '^', '@', '"', '!', '%', '#' };
 			var cipher = new char[11] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '$' };
-			
 
 			Console.WriteLine("Enter a text to decrypt:");
 			var strTextBefore = Console.ReadLine();
 			var arrayTextAfter = new char[strTextBefore.Length];
-
 
 			for (int i = 0; i < strTextBefore.Length; i++)
 			{
