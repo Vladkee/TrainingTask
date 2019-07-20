@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Program
+	public delegate void EventDelegate();
+	public class ActionEventArgs : EventArgs
 	{
-		static void Main(string[] args)
-		{
+		public event EventDelegate FridgeEvent;
 
-		}
 	}
 }
