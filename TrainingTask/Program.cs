@@ -10,7 +10,7 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-
+			new Management().Execute();
 		}
 	}
 }
