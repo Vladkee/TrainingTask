@@ -53,6 +53,8 @@
     <Compile Include="Task3\QueueManagement.cs" />
     <Compile Include="Task3\Task.cs" />
     <Compile Include="Task3\TaskList.cs" />
+    <Compile Include="Task4\Book.cs" />
+    <Compile Include="Task4\StackManagement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
