@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using TrainingTask.Task1;
 using TrainingTask.Task2;
 using TrainingTask.Task3;
+using TrainingTask.Task4;
 
 namespace TrainingTask
 {
@@ -17,7 +18,9 @@ namespace TrainingTask
 
 			//new DictionaryManagement().DictionaryExecute();
 
-			new QueueManagement().QueueExecute();
+			//new QueueManagement().QueueExecute();
+
+			new StackManagement().StackExecute();
 		}
 	}
 }
