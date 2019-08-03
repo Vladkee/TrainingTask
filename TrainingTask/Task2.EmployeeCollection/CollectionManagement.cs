@@ -60,7 +60,11 @@ namespace TrainingTask.Task2.EmployeeCollection
 																		 && employee.LastName.StartsWith("O") 
 																		 && employee.Age > 20);
 			Console.WriteLine("Sorted employees with a last name with \"O\"");
-			Display(sortedEmployeesWomenNameWithO);
+			var selectedEmployees = sortedEmployeesWomenNameWithO.Select(employee => employee.LastName);
+			foreach (var item in selectedEmployees)
+			{
+				Console.WriteLine(item);
+			}
 			Console.WriteLine(Environment.NewLine);
 			//
 			// Amount of employees of company.
