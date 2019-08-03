@@ -43,10 +43,14 @@ namespace TrainingTask.Task2.EmployeeCollection
 			// Only full name sorting.
 			//
 
-			var sortedEmployeesFullName = employees.OrderBy(employee => employee.LastName)
-												   .ThenBy(employee => employee.FirstName);
-			Console.WriteLine("Sorted employees with a full name");
-			Display(sortedEmployeesFullName);
+			var sortedEmployeesFullName = employees.Select(employee => employee.LastName + " "+ employee.FirstName);
+			Console.WriteLine("Employees only with a full name");
+			//Display(sortedEmployeesFullName);
+			foreach (var item in sortedEmployeesFullName)
+			{
+				Console.WriteLine(item);
+			}
+
 			Console.WriteLine(Environment.NewLine);
 			//
 			// Women, +20 age, last name with "O" sorting.

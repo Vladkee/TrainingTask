@@ -15,9 +15,9 @@ namespace TrainingTask
 		{
 			//new DeferedAndUndereredExampleManagement().Execute();
 
-			//new CollectionManagement().Execute();
+			new CollectionManagement().Execute();
 
-			new Management().Execute();
+			//new Management().Execute();
 		}
 	}
 }
