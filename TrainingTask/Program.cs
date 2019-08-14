@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TrainingTask.Task1;
-using TrainingTask.Task2;
+using TrainingTask.Task1PingPong;
 
 namespace TrainingTask
 {
@@ -12,10 +11,9 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			//new Execute().Manage();
+            //new GameManagerWithDelegate(new PingWithDelegate(), new PongWithDelegate());
 
-			new Management().Execute();
-
-		}
+            new GameManager(new Ping(), new Pong());
+        }
 	}
 }

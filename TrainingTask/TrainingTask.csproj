@@ -45,21 +45,19 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Task1\Engine.cs" />
-    <Compile Include="Task1\Execute.cs" />
-    <Compile Include="Task1\ISwitchable.cs" />
-    <Compile Include="Task1\Television.cs" />
-    <Compile Include="Task2\Worker.cs" />
-    <Compile Include="Task2\BankAccount.cs" />
-    <Compile Include="Task2\CardAccount4.cs" />
-    <Compile Include="Task2\CurrentAccount3.cs" />
-    <Compile Include="Task2\DepositAccount2.cs" />
-    <Compile Include="Task2\IChargableInterest1.cs" />
-    <Compile Include="Task2\IOperableAccount2.cs" />
-    <Compile Include="Task2\Management.cs" />
+    <Compile Include="Task1PingPong\GameEventArgs.cs" />
+    <Compile Include="Task1PingPong\GameManager.cs" />
+    <Compile Include="Task1PingPong\GameManagerWithDelegate.cs" />
+    <Compile Include="Task1PingPong\Ping.cs" />
+    <Compile Include="Task1PingPong\PingWithDelegate.cs" />
+    <Compile Include="Task1PingPong\Pong.cs" />
+    <Compile Include="Task1PingPong\PongWithDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Task2Hunter\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
