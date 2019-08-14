@@ -52,12 +52,14 @@
     <Compile Include="Task1PingPong\PingWithDelegate.cs" />
     <Compile Include="Task1PingPong\Pong.cs" />
     <Compile Include="Task1PingPong\PongWithDelegate.cs" />
+    <Compile Include="Task2Hunter\Hunter.cs" />
+    <Compile Include="Task2Hunter\Hunting.cs" />
+    <Compile Include="Task2Hunter\HuntingEventArgs.cs" />
+    <Compile Include="Task2Hunter\Rabbit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Task2Hunter\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
