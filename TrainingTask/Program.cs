@@ -14,4 +14,5 @@ namespace TrainingTask
             //new Border().GenerateBorder(20, 20);
         }
     }
+
 }
