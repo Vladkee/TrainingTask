@@ -2,20 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using TrainingTask.Task1;
-using TrainingTask.Task2;
 
 namespace TrainingTask
 {
 	class Program
 	{
-		static void Main(string[] args)
+        static void Main(string[] args)
 		{
-			//new Execute().Manage();
-
-			new Management().Execute();
-
-		}
-	}
+            //new Border().GenerateBorder(20, 20);
+        }
+    }
 }
