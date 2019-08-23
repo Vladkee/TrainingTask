@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TrainingTask.Task1
+namespace TrainingTask
 {
-	interface ISwitchable
-	{
-		void TurnOn();
+    public class Matrix
+    {
 
-		void TurnOff();
-	}
+    }
 }
