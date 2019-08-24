@@ -11,7 +11,13 @@ namespace TrainingTask
 	{
         static void Main(string[] args)
 		{
-            //new Border().GenerateBorder(20, 20);
+            Thread gameLeftBorderThread = new Thread(new ThreadStart(new GameField().GenerateGameBorder));
+            gameLeftBorderThread.Start();
+            
+            Thread trackBorderThread = new Thread(new ThreadStart(new TrackField().GenerateTrackBorder));
+            trackBorderThread.Start();
+
+            //new Drawer().Draw();
         }
     }
 

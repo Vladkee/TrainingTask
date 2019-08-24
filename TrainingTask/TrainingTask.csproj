@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Border.cs" />
-    <Compile Include="Field.cs" />
-    <Compile Include="Matrix.cs" />
+    <Compile Include="Drawer.cs" />
+    <Compile Include="GameField.cs" />
+    <Compile Include="TrackField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
