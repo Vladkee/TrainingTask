@@ -11,12 +11,15 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-            for (int i = 0; i < 65; i++)
+            for (int i = 0; i < 120; i++)
             {
                 Thread thread = new Thread(new ThreadStart(new Matrix().GenerateRainRow));
                 thread.Start();
             }
 
-		}
+            //new Matrix().GenerateRainRow();
+
+
+        }
 	}
 }

@@ -31,17 +31,24 @@ namespace TrainingTask
         {
             while (true)
             {
-                var cursorPosition = ChangeCursorPosition();
+                var cursorLeftPosition = ChangeLeftCursorPosition();
+                var cursorTopPosition = ChangeTopCursorPosition();
                 this.lenght = random.Next(3, height / 2);
+                //Thread.Sleep(30);
                 Thread.Sleep(GenerateThreadSpeed());
+
 
                 for (int i = 0, y = 0; i < this.height + this.lenght; i++)
                 {
+                    //Thread.Sleep(GenerateThreadSpeed());
+                    //Thread.Sleep(50);
+
+
                     lock (locker)
                     {
                         if (i < this.height)
                         {
-                            Console.SetCursorPosition(cursorPosition, i);
+                            Console.SetCursorPosition(cursorLeftPosition, i);
                             Console.WriteLine(GenerateElement());
 
                             if (i > 0)
@@ -50,7 +57,7 @@ namespace TrainingTask
 
                                 while (prevI < this.lenght)
                                 {
-                                    Console.SetCursorPosition(cursorPosition, i - prevI);
+                                    Console.SetCursorPosition(cursorLeftPosition, i - prevI);
                                     Console.WriteLine(GenerateElement());
 
                                     if (i - prevI == 0)
@@ -64,7 +71,7 @@ namespace TrainingTask
 
                         if (i >= this.lenght)
                         {
-                            Console.SetCursorPosition(cursorPosition, y);
+                            Console.SetCursorPosition(cursorLeftPosition, y);
                             Console.WriteLine(' ');
 
                             if (i >= this.height && i < this.height + lenght)
@@ -77,7 +84,7 @@ namespace TrainingTask
                                     {
                                         break;
                                     }
-                                    Console.SetCursorPosition(cursorPosition, y + next);
+                                    Console.SetCursorPosition(cursorLeftPosition, y + next);
                                     Console.WriteLine(GenerateElement());
                                     next++;
                                 }
@@ -99,9 +106,16 @@ namespace TrainingTask
             }
         }
 
-        public int ChangeCursorPosition()
+        public int ChangeLeftCursorPosition()
         {
             int cursorPos = random.Next(1, 100);
+
+            return cursorPos;
+        }
+
+        public int ChangeTopCursorPosition()
+        {
+            int cursorPos = random.Next(1, 10);
 
             return cursorPos;
         }
