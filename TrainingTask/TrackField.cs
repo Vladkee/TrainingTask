@@ -7,19 +7,17 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-    public class TrackField
+    public class TrackField : Drawer
     {
-        public int TrackHeight;
+        public int TrackHeight { get; }
 
-        public int TrackWidth;
+        public int TrackWidth { get; }
 
-        public char symbol;
-
-        public static object locker = new object();
+        private readonly char trackSymbol;
 
         public TrackField()
         {
-            this.symbol = 'I';
+            this.trackSymbol = 'I';
             this.TrackHeight = 24;
             this.TrackWidth = 20;
         }
@@ -34,24 +32,21 @@ namespace TrainingTask
 
                     for (int i = 2, y = this.TrackWidth; i < this.TrackHeight - 2; i++)
                     {
-                        lock (locker)
+                        
+                        lock (Drawer.locker)
                         {
-                            Console.SetCursorPosition(1, i + position);
-                            CreateElement(i);
-                            Console.SetCursorPosition(y, i + position);
-                            CreateElement(i);
+                            GenerateElement(2, position + i, i);
+                            GenerateElement(y, position + i, i);
 
-                            ClearElement(1, position+1);
-                            ClearElement(y, position+1);
-                            ClearElement(1, this.TrackHeight-1);
-                            ClearElement(y, this.TrackHeight-1);
+                            ClearElement(2, position + 1);
+                            ClearElement(y, position + 1);
+                            ClearElement(2, this.TrackHeight - 1);
+                            ClearElement(y, this.TrackHeight - 1);
 
                             if (position == 2)
                             {
-                                Console.SetCursorPosition(1, position - 1);
-                                CreateElement(i);
-                                Console.SetCursorPosition(y, position - 1);
-                                CreateElement(i);
+                                GenerateElement(2, position - 1, i);
+                                GenerateElement(y, position - 1, i);
                             }
                         }
                     }
@@ -59,23 +54,21 @@ namespace TrainingTask
             }
         }
 
-        public void CreateElement(int position)
+        public void GenerateElement(int left, int top, int position)
         {
-
-            if (position % 4 == 0 && position != 0)
+            lock (Drawer.locker)
             {
-                Console.WriteLine(' ');
+                if (position % 4 == 0 && position != 0)
+                {
+                    Console.SetCursorPosition(left, top);
+                    Console.WriteLine(' ');
+                }
+                else
+                {
+                    Console.SetCursorPosition(left, top);
+                    Console.WriteLine(this.trackSymbol);
+                }
             }
-            else
-            {
-                Console.WriteLine(this.symbol);
-            }
-        }
-
-        public void ClearElement(int positionLeft, int positionTop)
-        {
-            Console.SetCursorPosition(positionLeft, positionTop);
-            Console.WriteLine(' ');
         }
     }
 }

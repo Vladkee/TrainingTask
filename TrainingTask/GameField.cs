@@ -7,21 +7,21 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-    public class GameField
+    public class GameField : Drawer
     {
-        public int GameWindowHeight;
+        public int GameWindowHeight { get; }
 
-        public int GameWindowWidth;
+        public int GameWindowWidth { get; }
 
-        private char symbol;
+        private readonly char gameFieldSymbol;
 
-        public static object locker = new object();
+        private TrackField trackField = new TrackField();
 
         public GameField()
         {
             this.GameWindowHeight = 25;
             this.GameWindowWidth = 60;
-            this.symbol = 'x';
+            this.gameFieldSymbol = 'X';
             Console.WindowHeight = this.GameWindowHeight;
             Console.WindowWidth = this.GameWindowWidth;
             Console.CursorVisible = false;
@@ -31,25 +31,16 @@ namespace TrainingTask
         {
             for (int i = 0; i < this.GameWindowHeight; i++)
             {
-                lock (locker)
-                {
-                    GenerateElement(0, i);
-                    GenerateElement(this.GameWindowWidth - 1, i);
-                }
+                GenerateElement(0, i, this.gameFieldSymbol);
+                GenerateElement(this.GameWindowWidth - 1, i, this.gameFieldSymbol);
+                GenerateElement(trackField.TrackWidth + 2, i, this.gameFieldSymbol);
             }
 
             for (int i = 1; i < this.GameWindowWidth; i++)
             {
-                GenerateElement(i, 0);
-                GenerateElement(i, this.GameWindowHeight-1);
+                GenerateElement(i, 0, this.gameFieldSymbol);
+                GenerateElement(i, this.GameWindowHeight - 1, this.gameFieldSymbol);
             }
-        }
-
-        public void GenerateElement(int left, int top)
-        {
-            Console.SetCursorPosition(left, top);
-            Console.Write(this.symbol);
-
         }
     }
 }

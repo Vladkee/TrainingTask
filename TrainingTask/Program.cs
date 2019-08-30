@@ -7,18 +7,36 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Program
-	{
+    class Program
+    {
         static void Main(string[] args)
-		{
-            Thread gameLeftBorderThread = new Thread(new ThreadStart(new GameField().GenerateGameBorder));
-            gameLeftBorderThread.Start();
-            
+        {
+            GameLogic gameLogic = new GameLogic();
+
+            Thread gameFieldThread = new Thread(new ThreadStart(new GameLogic().RunGame));
+            gameFieldThread.Start();
+
+            //Thread.Sleep(4000);
+
             Thread trackBorderThread = new Thread(new ThreadStart(new TrackField().GenerateTrackBorder));
             trackBorderThread.Start();
 
-            //new Drawer().Draw();
+            Thread firstOtherCarThread = new Thread(new ThreadStart(new GameLogic().SendOtherCar));
+
+            Thread secondOtherCarThread = new Thread(new ThreadStart(new GameLogic().SendOtherCar));
+
+            for (int i = 0; i <= 1; i++)
+            {
+                if (i == 0)
+                {
+                    firstOtherCarThread.Start();
+                }
+                else
+                {
+                    Thread.Sleep(1550);
+                    secondOtherCarThread.Start();
+                }
+            }
         }
     }
-
 }

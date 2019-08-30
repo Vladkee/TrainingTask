@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Drawer.cs" />
     <Compile Include="GameField.cs" />
+    <Compile Include="GameLogic.cs" />
+    <Compile Include="MyCar.cs" />
+    <Compile Include="OtherCar.cs" />
     <Compile Include="TrackField.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

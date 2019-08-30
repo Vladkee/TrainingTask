@@ -9,13 +9,24 @@ namespace TrainingTask
 {
     public class Drawer
     {
-        private TrackField trackField = new TrackField();
-        private GameField gameField = new GameField();
+        public static object locker = new object();
 
-        public void Draw()
+        public virtual void GenerateElement(int left, int top, char symbol)
         {
-            new TrackField().GenerateTrackBorder();
+            lock (Drawer.locker)
+            {
+                Console.SetCursorPosition(left, top);
+                Console.Write(symbol);
+            }
+        }
 
+        public virtual void ClearElement(int left, int top)
+        {
+            lock (Drawer.locker)
+            {
+                Console.SetCursorPosition(left, top);
+                Console.Write(' ');
+            }
         }
     }
 }
