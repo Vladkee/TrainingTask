@@ -32,7 +32,6 @@ namespace TrainingTask
 
                     for (int i = 2, y = this.TrackWidth; i < this.TrackHeight - 2; i++)
                     {
-                        
                         lock (Drawer.locker)
                         {
                             GenerateElement(2, position + i, i);

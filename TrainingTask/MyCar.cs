@@ -19,7 +19,6 @@ namespace TrainingTask
             this.carSymbol = 'x';
 
             GenerateElement(4, trackField.TrackHeight - 2, this.carSymbol);
-            GenerateElement(4, trackField.TrackHeight - 2, this.carSymbol);
             GenerateElement(4, trackField.TrackHeight - 4, this.carSymbol);
             GenerateElement(5, trackField.TrackHeight - 3, this.carSymbol);
             GenerateElement(5, trackField.TrackHeight - 4, this.carSymbol);

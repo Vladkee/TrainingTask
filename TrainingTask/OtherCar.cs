@@ -13,8 +13,6 @@ namespace TrainingTask
 
         private readonly char carSymbol;
 
-        public static bool IsCross { get; set; }
-
         public OtherCar()
         {
             this.carSymbol = 'x';
@@ -75,20 +73,23 @@ namespace TrainingTask
 
         public void RunAnotherCar(int topPosition, int leftPosition)
         {
-            GenerateElement(5 + leftPosition, 5 + topPosition, this.carSymbol);
+            lock (Drawer.locker)
+            {
+                GenerateElement(5 + leftPosition, 5 + topPosition, this.carSymbol);
 
-            GenerateElement(4 + leftPosition, 4 + topPosition, this.carSymbol);
-            GenerateElement(5 + leftPosition, 4 + topPosition, this.carSymbol);
-            GenerateElement(6 + leftPosition, 4 + topPosition, this.carSymbol);
-            GenerateElement(5 + leftPosition, 3 + topPosition, this.carSymbol);
+                GenerateElement(4 + leftPosition, 4 + topPosition, this.carSymbol);
+                GenerateElement(5 + leftPosition, 4 + topPosition, this.carSymbol);
+                GenerateElement(6 + leftPosition, 4 + topPosition, this.carSymbol);
+                GenerateElement(5 + leftPosition, 3 + topPosition, this.carSymbol);
 
-            ClearElement(4 + leftPosition, 3 + topPosition);
-            ClearElement(6 + leftPosition, 3 + topPosition);
-            GenerateElement(4 + leftPosition, 2 + topPosition, this.carSymbol);
-            GenerateElement(6 + leftPosition, 2 + topPosition, this.carSymbol);
-            ClearElement(5 + leftPosition, 2 + topPosition);
-            ClearElement(4 + leftPosition, 1 + topPosition);
-            ClearElement(6 + leftPosition, 1 + topPosition);
+                ClearElement(4 + leftPosition, 3 + topPosition);
+                ClearElement(6 + leftPosition, 3 + topPosition);
+                GenerateElement(4 + leftPosition, 2 + topPosition, this.carSymbol);
+                GenerateElement(6 + leftPosition, 2 + topPosition, this.carSymbol);
+                ClearElement(5 + leftPosition, 2 + topPosition);
+                ClearElement(4 + leftPosition, 1 + topPosition);
+                ClearElement(6 + leftPosition, 1 + topPosition);
+            }
         }
 
         public void DeleteAnotherCar(int leftPosition, int speed)

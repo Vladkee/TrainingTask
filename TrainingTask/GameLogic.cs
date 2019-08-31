@@ -23,16 +23,22 @@ namespace TrainingTask
 
         private static int countCar;
 
-        private static bool isShutdown;
+        private volatile static bool isShutdown;
 
         private static int speed;
 
+        private static int live;
+
+        private static bool isCrash;
+
         public void RunGame()
         {
-            gameField.GenerateGameBorder();
+            Console.ForegroundColor = ConsoleColor.DarkRed;
+            this.gameField.GenerateGameBorder();
 
-            //RunTimer();
+            RunTimer();
 
+            Console.ForegroundColor = ConsoleColor.Green;
             RunMyCar();
         }
 
@@ -46,11 +52,11 @@ namespace TrainingTask
                 {
                     if (key.Key == ConsoleKey.RightArrow)
                     {
-                        myCar.MoveRight();
+                        this.myCar.MoveRight();
                     }
                     else if (key.Key == ConsoleKey.LeftArrow)
                     {
-                        myCar.MoveLeft();
+                        this.myCar.MoveLeft();
                     }
                 }
             }
@@ -62,11 +68,15 @@ namespace TrainingTask
 
             speed = 99;
 
+            live = 3;
+
             while (true)
             {
-                var positionCase = random.Next(0, 5);
+                isCrash = false;
 
-                if (positionCase > 2)
+                var positionCase = this.random.Next(0, 4);
+
+                if (positionCase >= 2)
                 {
                     leftCarPosition = 0;
                 }
@@ -75,20 +85,12 @@ namespace TrainingTask
                     leftCarPosition = 12;
                 }
 
-                otherCar.CreateCar(leftCarPosition, speed);
+                this.otherCar.CreateCar(leftCarPosition, speed);
 
-                for (int i = 0, y = 1; i < trackField.TrackHeight; i++, y++)
+                for (int i = 0, y = 1, z = 5; i < this.trackField.TrackHeight; i++, y++, z++)
                 {
-                    if (i < trackField.TrackHeight - 5)
+                    if (i < this.trackField.TrackHeight - 5)
                     {
-                        lock (Drawer.locker)
-                        {
-                            Console.SetCursorPosition(gameField.GameWindowWidth - 23, 5);
-                            Console.WriteLine("SCORE: " + GetScore(countCar));
-                            Console.SetCursorPosition(gameField.GameWindowWidth - 23, 6);
-                            Console.WriteLine("SPEED: " + speed);
-                        }
-
                         Thread.Sleep(speed);
 
                         if (isShutdown)
@@ -96,66 +98,142 @@ namespace TrainingTask
                             Thread.CurrentThread.Abort();
                         }
 
-                        otherCar.RunAnotherCar(i, leftCarPosition);
+                        lock (Drawer.locker)
+                        {
+                            Console.SetCursorPosition(gameField.GameWindowWidth - 23, 5);
+                            Console.WriteLine("SCORE: " + GetScore(countCar));
+                            Console.SetCursorPosition(gameField.GameWindowWidth - 23, 6);
+                            Console.WriteLine("SPEED: " + speed);
+                            Console.SetCursorPosition(gameField.GameWindowWidth - 23, 7);
+                            Console.WriteLine("LIVES: " + live);
+                        }
 
-                        if (i >= trackField.TrackHeight - 10 && leftCarPosition == 0 && MyCar.MyCarPosition == 1)
+                        this.otherCar.RunAnotherCar(i, leftCarPosition);
 
+                        if (i >= this.trackField.TrackHeight - 10 && leftCarPosition == 0 && MyCar.MyCarPosition == 1)
                         {
                             lock (Drawer.locker)
                             {
-                                isShutdown = true;
-                                Console.Clear();
+                                if (!isCrash)
+                                {
+                                    live--;
+                                    Console.Beep();
+                                    isCrash = true;
 
-                                SendGameOverMessage(GetScore(countCar));
-                                Thread.CurrentThread.Abort();
+                                    if (live == 0)
+                                    {
+                                        isShutdown = true;
+                                        Console.Clear();
+
+                                        SendGameOverMessage(GetScore(countCar));
+                                        Thread.CurrentThread.Abort();
+                                    }
+                                }
+
+                                if (i >= this.trackField.TrackHeight - 7)
+                                {
+                                    drawerInstance.GenerateElement(5, trackField.TrackHeight - 5, 'x');
+                                }
                             }
                         }
-
-                        else if (i >= trackField.TrackHeight - 10 && leftCarPosition == 12 && MyCar.MyCarPosition == 2)
+                        else if (i >= this.trackField.TrackHeight - 10 && leftCarPosition == 12 && MyCar.MyCarPosition == 2)
                         {
                             lock (Drawer.locker)
                             {
-                                isShutdown = true;
-                                Console.Clear();
+                                if (!isCrash)
+                                {
+                                    live--;
+                                    Console.Beep();
+                                    isCrash = true;
 
-                                SendGameOverMessage(GetScore(countCar));
-                                Thread.CurrentThread.Abort();
+                                    if (live == 0)
+                                    {
+                                        isShutdown = true;
+                                        Console.Clear();
+
+                                        SendGameOverMessage(GetScore(countCar));
+                                        Thread.CurrentThread.Abort();
+                                    }
+                                }
+
+                                if (i == this.trackField.TrackHeight - 7)
+                                {
+                                    drawerInstance.GenerateElement(17, trackField.TrackHeight - 5, 'x');
+                                }
                             }
                         }
 
-                        if (y >= trackField.TrackHeight - 5)
+                        if (y >= this.trackField.TrackHeight - 5)
                         {
-                            otherCar.DeleteAnotherCar(leftCarPosition, speed);
+                            this.otherCar.DeleteAnotherCar(leftCarPosition, speed);
 
                             countCar++;
 
                             speed = GenerateSpeed(GetScore(countCar));
                         }
                     }
-                    else if (i >= trackField.TrackHeight - 5 && i < trackField.TrackHeight)
+                    else if (i >= this.trackField.TrackHeight - 5 && i < this.trackField.TrackHeight)
                     {
-                        if (i >= trackField.TrackHeight - 10 && leftCarPosition == 0 && MyCar.MyCarPosition == 1)
-
+                        if (i >= this.trackField.TrackHeight - 5 && leftCarPosition == 0 && MyCar.MyCarPosition == 1)
                         {
                             lock (Drawer.locker)
                             {
-                                isShutdown = true;
-                                Console.Clear();
+                                if (!isCrash)
+                                {
+                                    live--;
+                                    Console.Beep();
+                                    isCrash = true;
 
-                                SendGameOverMessage(GetScore(countCar));
-                                Thread.CurrentThread.Abort();
+                                    if (live == 0)
+                                    {
+                                        isShutdown = true;
+                                        Console.Clear();
+
+                                        SendGameOverMessage(GetScore(countCar));
+                                        Thread.CurrentThread.Abort();
+                                    }
+                                }
+
+                                if (i == this.trackField.TrackHeight - 5)
+                                {
+                                    drawerInstance.GenerateElement(4, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(6, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(5, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(5, trackField.TrackHeight - 3, 'x');
+                                    drawerInstance.GenerateElement(4, trackField.TrackHeight - 2, 'x');
+                                    drawerInstance.GenerateElement(6, trackField.TrackHeight - 2, 'x');
+                                }
                             }
                         }
-
-                        else if (i >= trackField.TrackHeight - 10 && leftCarPosition == 12 && MyCar.MyCarPosition == 2)
+                        else if (i >= this.trackField.TrackHeight - 5 && leftCarPosition == 12 && MyCar.MyCarPosition == 2)
                         {
                             lock (Drawer.locker)
                             {
-                                isShutdown = true;
-                                Console.Clear();
+                                if (!isCrash)
+                                {
+                                    live--;
+                                    Console.Beep();
+                                    isCrash = true;
 
-                                SendGameOverMessage(GetScore(countCar));
-                                Thread.CurrentThread.Abort();
+                                    if (live == 0)
+                                    {
+                                        isShutdown = true;
+                                        Console.Clear();
+
+                                        SendGameOverMessage(GetScore(countCar));
+                                        Thread.CurrentThread.Abort();
+                                    }
+                                }
+
+                                if (i == this.trackField.TrackHeight - 5)
+                                {
+                                    drawerInstance.GenerateElement(16, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(18, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(17, trackField.TrackHeight - 4, 'x');
+                                    drawerInstance.GenerateElement(17, trackField.TrackHeight - 3, 'x');
+                                    drawerInstance.GenerateElement(16, trackField.TrackHeight - 2, 'x');
+                                    drawerInstance.GenerateElement(18, trackField.TrackHeight - 2, 'x');
+                                }
                             }
                         }
                     }
@@ -167,10 +245,12 @@ namespace TrainingTask
         {
             lock (Drawer.locker)
             {
-                Console.SetCursorPosition(gameField.GameWindowWidth - 23, 4);
+                Console.Clear();
+
+                Console.SetCursorPosition(this.gameField.GameWindowWidth - 23, 4);
                 Console.WriteLine("GAME OVER");
 
-                Console.SetCursorPosition(gameField.GameWindowWidth - 23, 5);
+                Console.SetCursorPosition(this.gameField.GameWindowWidth - 23, 5);
                 Console.WriteLine("SCORE: " + score);
             }
         }
@@ -243,7 +323,6 @@ namespace TrainingTask
                     }
                 }
             }
-
         }
     }
 }

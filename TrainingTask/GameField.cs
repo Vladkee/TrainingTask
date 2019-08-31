@@ -29,17 +29,20 @@ namespace TrainingTask
 
         public void GenerateGameBorder()
         {
-            for (int i = 0; i < this.GameWindowHeight; i++)
+            lock (Drawer.locker)
             {
-                GenerateElement(0, i, this.gameFieldSymbol);
-                GenerateElement(this.GameWindowWidth - 1, i, this.gameFieldSymbol);
-                GenerateElement(trackField.TrackWidth + 2, i, this.gameFieldSymbol);
-            }
+                for (int i = 0; i < this.GameWindowHeight; i++)
+                {
+                    GenerateElement(0, i, this.gameFieldSymbol);
+                    GenerateElement(this.GameWindowWidth - 1, i, this.gameFieldSymbol);
+                    GenerateElement(trackField.TrackWidth + 2, i, this.gameFieldSymbol);
+                }
 
-            for (int i = 1; i < this.GameWindowWidth; i++)
-            {
-                GenerateElement(i, 0, this.gameFieldSymbol);
-                GenerateElement(i, this.GameWindowHeight - 1, this.gameFieldSymbol);
+                for (int i = 1; i < this.GameWindowWidth; i++)
+                {
+                    GenerateElement(i, 0, this.gameFieldSymbol);
+                    GenerateElement(i, this.GameWindowHeight - 1, this.gameFieldSymbol);
+                }
             }
         }
     }

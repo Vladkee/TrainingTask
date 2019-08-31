@@ -11,12 +11,10 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-            GameLogic gameLogic = new GameLogic();
-
             Thread gameFieldThread = new Thread(new ThreadStart(new GameLogic().RunGame));
             gameFieldThread.Start();
 
-            //Thread.Sleep(4000);
+            Thread.Sleep(4000);
 
             Thread trackBorderThread = new Thread(new ThreadStart(new TrackField().GenerateTrackBorder));
             trackBorderThread.Start();
