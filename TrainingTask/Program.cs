@@ -16,9 +16,9 @@ namespace TrainingTask
 
 			//new ArrayList().Execute();
 
-			//new CarCollection<Car>().Management();
+			new CarCollection<Car>().Management();
 
-			new ManagementOfLinkedList().Execute();
+			//new ManagementOfLinkedList().Execute();
 		}
 	}
 }

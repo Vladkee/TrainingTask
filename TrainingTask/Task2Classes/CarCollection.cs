@@ -55,7 +55,7 @@ namespace TrainingTask
 			var carNameToFind = Console.ReadLine();
 			Console.WriteLine(Environment.NewLine);
 
-			Car keyCar = default;
+			Car keyCar = null;
 			for (int i = 0; i < carArray.Count; i++)
 			{
 				if (carArray[i].Name.Contains(carNameToFind))
@@ -65,7 +65,7 @@ namespace TrainingTask
 					return keyCar;
 				}
 			}
-			if (keyCar==default)
+			if (keyCar==null)
 			{
 				Console.WriteLine("Nothing was found");
 			}
