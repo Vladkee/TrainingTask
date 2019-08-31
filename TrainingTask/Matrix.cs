@@ -108,13 +108,11 @@ namespace TrainingTask
                     {
                         color = ConsoleColor.Green;
                         Console.ForegroundColor = color;
-
                     }
                     else
                     {
                         color = ConsoleColor.White;
                         Console.ForegroundColor = color;
-
                     }
                     var element = Convert.ToChar(random.Next(70, 120));
 
