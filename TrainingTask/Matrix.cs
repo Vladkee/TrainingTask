@@ -9,7 +9,9 @@ namespace TrainingTask
 {
     public class Matrix
     {
-        private Random random = new Random();
+        private static Random random = new Random();
+
+        private static ConsoleColor color;
 
         private int width;
 
@@ -17,7 +19,7 @@ namespace TrainingTask
 
         private int lenght;
 
-        static public object locker = new object();
+        public static object locker = new object();
 
         public Matrix()
         {
@@ -34,16 +36,9 @@ namespace TrainingTask
                 var cursorLeftPosition = ChangeLeftCursorPosition();
                 var cursorTopPosition = ChangeTopCursorPosition();
                 this.lenght = random.Next(3, height / 2);
-                //Thread.Sleep(30);
-                Thread.Sleep(GenerateThreadSpeed());
-
 
                 for (int i = 0, y = 0; i < this.height + this.lenght; i++)
                 {
-                    //Thread.Sleep(GenerateThreadSpeed());
-                    //Thread.Sleep(50);
-
-
                     lock (locker)
                     {
                         if (i < this.height)
@@ -98,11 +93,35 @@ namespace TrainingTask
 
         public char GenerateElement()
         {
+            var position = random.Next(0, 4);
+
             while (true)
             {
-                var element = Convert.ToChar(random.Next(70, 120));
+                lock (locker)
+                {
+                    if (position == 0)
+                    {
+                        color = ConsoleColor.DarkGreen;
+                        Console.ForegroundColor = color;
+                    }
+                    else if (position == 1)
+                    {
+                        color = ConsoleColor.Green;
+                        Console.ForegroundColor = color;
 
-                return element;
+                    }
+                    else
+                    {
+                        color = ConsoleColor.White;
+                        Console.ForegroundColor = color;
+
+                    }
+                    var element = Convert.ToChar(random.Next(70, 120));
+
+                    position++;
+
+                    return element;
+                }
             }
         }
 
@@ -122,8 +141,9 @@ namespace TrainingTask
 
         public int GenerateThreadSpeed()
         {
-            var speedCase = random.Next(1, 5);
+            var speedCase = random.Next(1, 6);
             int speed = 0;
+
             switch (speedCase)
             {
                 case 1:
