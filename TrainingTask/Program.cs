@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
-using TrainingTask.Task1;
-using TrainingTask.Task2;
 
 namespace TrainingTask
 {
@@ -12,10 +11,14 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			//new Execute().Manage();
+            Matrix matrixInstance = new Matrix();
 
-			new Management().Execute();
-
-		}
+            for (int i = 0; i < 80; i++)
+            {
+                Thread.Sleep(matrixInstance.GenerateThreadSpeed());
+                Thread thread = new Thread(new ThreadStart(new Matrix().GenerateRainRow));
+                thread.Start();
+            }
+        }
 	}
 }
