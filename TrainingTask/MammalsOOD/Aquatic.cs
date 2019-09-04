@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Terrestrial : Mammal
+	public class Aquatic : Mammal
 	{
-		public Terrestrial(int age, int weight) : base(age, weight)
+		public Aquatic(int age, int weight) : base(age, weight)
 		{
 			this.Weight = weight;
 		}
-		public override void Eat(int foodAmount)
+
+		public void EatAquatic(int foodAmount)
 		{
 			Console.WriteLine($"{GetType().Name}'s weight before is {this.Weight} kg.");
 

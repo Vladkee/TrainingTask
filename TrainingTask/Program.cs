@@ -10,8 +10,7 @@ namespace TrainingTask
 	{
 		static void Main(string[] args)
 		{
-			new Feeder().Feed(MammalList.GetMammalsList());
+            new Feeder().Feed(new MammalList().GetMammalsList());
 		}
-
 	}
 }

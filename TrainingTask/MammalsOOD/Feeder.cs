@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Feeder
+	public class Feeder
 	{
 		public void Feed(Mammal[] mammals)
 		{

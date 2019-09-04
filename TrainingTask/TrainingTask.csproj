@@ -43,19 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aquatic.cs" />
-    <Compile Include="Arboreal.cs" />
-    <Compile Include="Arial.cs" />
-    <Compile Include="Feeder.cs" />
-    <Compile Include="Mammal.cs" />
-    <Compile Include="MammalList.cs" />
+    <Compile Include="MammalsOOD\Aquatic.cs" />
+    <Compile Include="MammalsOOD\Arboreal.cs" />
+    <Compile Include="MammalsOOD\Arial.cs" />
+    <Compile Include="MammalsOOD\Feeder.cs" />
+    <Compile Include="MammalsOOD\Mammal.cs" />
+    <Compile Include="MammalsOOD\MammalList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Subterranean.cs" />
-    <Compile Include="Terrestrial.cs" />
+    <Compile Include="MammalsOOD\Subterranean.cs" />
+    <Compile Include="MammalsOOD\Terrestrial.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

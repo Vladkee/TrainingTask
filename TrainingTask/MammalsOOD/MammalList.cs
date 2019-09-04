@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class MammalList
+	public class MammalList
 	{
-		public static Mammal[] GetMammalsList()
+		public Mammal[] GetMammalsList()
 		{
-			Mammal []mammals =
+			Mammal[] mammals =
 		{
 			new Arboreal(1, 20),
 			new Aquatic(2, 25),

@@ -12,7 +12,7 @@ namespace TrainingTask
 		{
 			this.Weight = weight;
 		}
-		public override void Eat(int foodAmount)
+		public void EatSubter(int foodAmount)
 		{
 			Console.WriteLine($"{GetType().Name}'s weight before is {this.Weight} kg.");
 

@@ -6,16 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrainingTask
 {
-	class Arboreal : Mammal
+	public class Arial : Mammal
 	{
-		public Arboreal(int age, int weight) : base(age, weight)
+		public Arial(int age, int weight) : base(age, weight)
 		{
 			this.Weight = weight;
 		}
-
-		public override void Eat(int foodAmount)
+		public void EatArial(int foodAmount)
 		{
-			Console.WriteLine($"{GetType().Name}'s weight before is {this.Weight}.");
+			Console.WriteLine($"{GetType().Name}'s weight before is {this.Weight} kg.");
 
 			if (this.Age <= 1)
 			{
