@@ -10,20 +10,22 @@ namespace TrainingTask
     {
         static void Main(string[] args)
         {
-			//UniqueSymbol();
+            //UniqueSymbol();
 
-			//InsertedText();
+            DeleteDuplicatesInRow();
 
-			//DeletedSpaceBetweenQuestionSymbols();
+            //InsertedText();
 
-			//DeletedExtraSpaces();
+            //DeletedSpaceBetweenQuestionSymbols();
 
-			//ExactWordinText();
+            //DeletedExtraSpaces();
 
-			//SwapText();
+            //ExactWordinText();
 
-			GetMaxAndMinSizeOfWords();
-		}
+            //SwapText();
+
+            //GetMaxAndMinSizeOfWords();
+        }
 
         public static void UniqueSymbol()
         {
@@ -40,6 +42,27 @@ namespace TrainingTask
                 }
             }
             Console.WriteLine($"The symbol {symbol} repeated {counterSymbol} times.");
+        }
+
+        public static void DeleteDuplicatesInRow()
+        {
+            string text = "123425123";
+
+            string newText = string.Empty;
+
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                for (int y = i+1; y < text.Length; y++)
+                {
+                    if (text[y] == text[i])
+                    {
+                        newText = text.Remove(y, 1);
+                        text = newText;
+                    }
+                }
+            }
+            Console.WriteLine(text);
         }
 
         public static void InsertedText()
@@ -97,51 +120,51 @@ namespace TrainingTask
             Console.WriteLine($"The first symbol of \"{word}\" is \"{letter}\".");
         }
 
-		public static void SwapText()
-		{
-			Console.WriteLine("Enter some text:");
-			var someText = Console.ReadLine();
+        public static void SwapText()
+        {
+            Console.WriteLine("Enter some text:");
+            var someText = Console.ReadLine();
 
-			string[] arrayOfSomeText = someText.Split(' ');
-			int arrayLenght = arrayOfSomeText.Length;
-			string temp = string.Empty;
+            string[] arrayOfSomeText = someText.Split(' ');
+            int arrayLenght = arrayOfSomeText.Length;
+            string temp = string.Empty;
 
-			for (int i = 0, j = arrayLenght - 1; i < j & j < arrayLenght; i++, j--)
-			{
-				temp = arrayOfSomeText[i];
-				arrayOfSomeText[i] = arrayOfSomeText[j];
-				arrayOfSomeText[j] = temp;
-			}
-			Console.WriteLine("Swapped text looks like:");
-			Console.WriteLine(string.Join(" ", arrayOfSomeText));
-		}
+            for (int i = 0, j = arrayLenght - 1; i < j & j < arrayLenght; i++, j--)
+            {
+                temp = arrayOfSomeText[i];
+                arrayOfSomeText[i] = arrayOfSomeText[j];
+                arrayOfSomeText[j] = temp;
+            }
+            Console.WriteLine("Swapped text looks like:");
+            Console.WriteLine(string.Join(" ", arrayOfSomeText));
+        }
 
-		public static void GetMaxAndMinSizeOfWords()
-		{
-			Console.WriteLine("Enter some text:");
-			var someText = Console.ReadLine();
+        public static void GetMaxAndMinSizeOfWords()
+        {
+            Console.WriteLine("Enter some text:");
+            var someText = Console.ReadLine();
 
-			string[] arrayOfSomeText = someText.Split(' ');
-			int maxSize = arrayOfSomeText[0].Length;
-			string maxSizeWord = string.Empty;
-			int minSize = arrayOfSomeText[0].Length;
-			string minSizeWord = string.Empty;
+            string[] arrayOfSomeText = someText.Split(' ');
+            int maxSize = arrayOfSomeText[0].Length;
+            string maxSizeWord = string.Empty;
+            int minSize = arrayOfSomeText[0].Length;
+            string minSizeWord = string.Empty;
 
-			for (int i = 0; i < arrayOfSomeText.Length; i++)
-			{
-				if (maxSize < arrayOfSomeText[i].Length)
-				{
-					maxSize = arrayOfSomeText[i].Length;
-					maxSizeWord = arrayOfSomeText[i];
-				}
+            for (int i = 0; i < arrayOfSomeText.Length; i++)
+            {
+                if (maxSize < arrayOfSomeText[i].Length)
+                {
+                    maxSize = arrayOfSomeText[i].Length;
+                    maxSizeWord = arrayOfSomeText[i];
+                }
 
-				if (minSize > arrayOfSomeText[i].Length)
-				{
-					minSize = arrayOfSomeText[i].Length;
-					minSizeWord = arrayOfSomeText[i];
-				}
-			}
-			Console.WriteLine($"The longest word is '{maxSizeWord}' with lenght {maxSize} and the shortest word is '{minSizeWord}' with lenght {minSize}");
-		}
-	}
+                if (minSize > arrayOfSomeText[i].Length)
+                {
+                    minSize = arrayOfSomeText[i].Length;
+                    minSizeWord = arrayOfSomeText[i];
+                }
+            }
+            Console.WriteLine($"The longest word is '{maxSizeWord}' with lenght {maxSize} and the shortest word is '{minSizeWord}' with lenght {minSize}");
+        }
+    }
 }
