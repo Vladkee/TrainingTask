@@ -10,6 +10,7 @@ namespace TrainingTask
 	public class CarCollection<T> : MyList<T> where T : Car
 	{
 		private MyList<Car> carArray = new MyList<Car>();
+
 		public void Management()
 		{
 			Console.WriteLine($"Elements: {carArray.ToString()}");
@@ -55,21 +56,30 @@ namespace TrainingTask
 			var carNameToFind = Console.ReadLine();
 			Console.WriteLine(Environment.NewLine);
 
-			Car keyCar = null;
-			for (int i = 0; i < carArray.Count; i++)
-			{
-				if (carArray[i].Name.Contains(carNameToFind))
-				{
-					Console.WriteLine("Yes, we have found such element in the list:");
-					keyCar = carArray[i];
-					return keyCar;
-				}
-			}
-			if (keyCar==null)
-			{
-				Console.WriteLine("Nothing was found");
-			}
-			return keyCar;
+            Car keyCar = null;
+            //for (int i = 0; i < carArray.Count; i++)
+            //{
+            //	if (carArray[i].Name.Contains(carNameToFind))
+            //	{
+            //		Console.WriteLine("Yes, we have found such element in the list:");
+            //		keyCar = carArray[i];
+            //		return keyCar;
+            //	}
+            //}
+            //if (keyCar==null)
+            //{
+            //	Console.WriteLine("Nothing was found");
+            //}
+            //return keyCar;
+
+            for (int i = 0; i < carArray.Count; i++)
+            {
+                if (carArray[i].Name == carNameToFind)
+                {
+                    keyCar = carArray[i];
+                }
+            }
+            return keyCar;
 		}
 	}
 }
